@@ -10,18 +10,16 @@
 	
 get_header(); ?>
 
-<?php if ( function_exists('yoast_breadcrumb') )  {yoast_breadcrumb('<div class="breadcrumbs">','</div>');} ?>
-
-<div class="container">
-	<main class="content">
+<main>
+    <div class="container">
 		<?php	while ( have_posts() ) : the_post(); ?>
 		<h1><? the_title(); ?></h1>
 		<?php          
 			the_content();
 			endwhile;
 		?> 
-	</main><!-- .content -->
-</div>
+    </div>
+</main>
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

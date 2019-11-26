@@ -9,11 +9,11 @@
  */
 ?>
 
-<?php wp_footer(); ?>
 <footer>
+<?php wp_footer(); ?>
     <div class="container">
 <!--        Footer-->
-        <p>SQL queries: <?= get_num_queries() ?></p>
+<!--        <p>SQL queries: --><?//= get_num_queries() ?><!--</p>-->
     </div>
 </footer>
 </body>
