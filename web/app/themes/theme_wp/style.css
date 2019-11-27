@@ -224,6 +224,7 @@ header.header {
     visibility: visible;
     transition: opacity 0s;
     opacity: 1;
+    z-index: 1;
 }
 .sub-menu li {
     display: block;
@@ -254,6 +255,11 @@ header.header {
 .page__content {
     display: flex;
     flex-flow: wrap;
+}
+.product__item {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
 }
 /* End front page */
 

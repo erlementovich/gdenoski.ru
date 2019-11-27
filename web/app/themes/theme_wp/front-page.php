@@ -7,16 +7,17 @@
 		* Author: gmate
 		* 
 	*/
+?>
 	
-get_header();
+<?php   get_header(); ?>
 
-
-    $args = array(
+<?php
+    $products = new WP_Query([
         'post_type'      => 'product',
-        'posts_per_page' => -1
-    );
-
-    $loop = new WP_Query( $args );
+        'posts_per_page' => -1,
+        'orderby'        => 'date',
+        'order'          => 'DESC'
+    ]);
 ?>
 
 <main>
@@ -26,20 +27,19 @@ get_header();
             <a href="#" class="button button-black">Все носки</a>
         </div>
         <div class="page__content">
+            <?php if ($products) : ?>
             <?php
-                while ( $loop->have_posts() ) : $loop->the_post();
+                while ( $products->have_posts() ) : $products->the_post();
                     global $product;
-                    echo '<div class="price_single">'.
-                         woocommerce_get_product_thumbnail()
-                         .'<div class="price_title"> '.
-                         get_the_title()
-                         .'</div><div class="price_price">'.
-                         $product->get_price_html()
-                         .'</div></div>';
-                endwhile;
-
-                wp_reset_query();
-            ?>
+                    ?>
+                    <div class="product__item">
+                        <div class="product__thumb"><?= woocommerce_get_product_thumbnail(); ?></div>
+                        <div class="product__title"><?= get_the_title(); ?></div>
+                        <div class="product__price"><?= $product->get_price_html(); ?></div>
+                    </div>
+                <?php endwhile; ?>
+                <?php wp_reset_query(); ?>
+            <?php endif; ?>
         </div>
     </div>
 </main>
