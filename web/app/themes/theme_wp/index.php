@@ -7,7 +7,4 @@
  * Author: gmate
  * 
  */
-
-  // page-index.php
- 
 ?>

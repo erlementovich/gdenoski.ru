@@ -28,7 +28,7 @@
     <meta property="og:image" content="" />
     <!-- End OpenGraph -->
 </head>
-<body>
+<body class="post-<?= get_the_ID(); ?>">
 <header class="header">
     <div class="header__inner container">
         <div class="header__top">

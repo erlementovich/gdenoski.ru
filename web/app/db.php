@@ -1,0 +1,1 @@
+/Users/andrejbarbasin/sites/gdenoski/web/app/plugins/query-monitor/wp-content/db.php
