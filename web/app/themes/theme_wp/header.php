@@ -33,9 +33,7 @@
     <div class="header__inner container">
         <div class="header__top">
             <div class="header__logo">
-                <a href="/">
-                    <img src="/app/uploads/2019/11/noski_logo.svg" alt="Где носки логотип">
-                </a>
+                <?php get_template_part('/template-parts/elements/logo'); ?>
             </div>
             <div class="header__search">
                 <?php get_search_form(); ?>
@@ -44,19 +42,6 @@
                 <a href="#" class="button button-transparent">Войти</a>
             </div>
         </div>
-        <div class="header__bottom">
-            <?php
-                wp_nav_menu([
-                    'menu'            => 'HeaderMenu',
-                    'container'       => 'nav',
-                    'container_class' => 'header__menu',
-                    'container_id'    => '',
-                    'items_wrap'      => '<ul>%3$s</ul>',
-                    'menu_id'         => '',
-                    'fallback_cb'     => 'wp_page_menu',
-                    'theme_location'  => 'top'
-                ]);
-            ?>
-        </div>
+        <?php get_template_part('/template-parts/menu'); ?>
     </div>
 </header>

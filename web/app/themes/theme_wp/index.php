@@ -8,6 +8,6 @@
  * 
  */
 
-  // главная страница - front-page.php
+  // page-index.php
  
 ?>

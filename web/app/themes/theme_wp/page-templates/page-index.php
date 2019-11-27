@@ -1,15 +1,11 @@
 <?php
-	/**
-		*
-		* @package WordPress
-		* @subpackage theme_wp
-		* @since theme_wp 1.0
-		* Author: gmate
-		* 
-	*/
+    /**
+     *
+     *  Template name: Главная страница
+     */
 ?>
-	
-<?php   get_header(); ?>
+
+<?php get_header(); ?>
 
 <?php
     $products = new WP_Query([
@@ -28,15 +24,17 @@
         </div>
         <div class="page__content">
             <?php if ($products) : ?>
-            <?php
+                <?php
                 while ( $products->have_posts() ) : $products->the_post();
                     global $product;
                     ?>
-                    <div class="product__item">
-                        <div class="product__thumb"><?= woocommerce_get_product_thumbnail(); ?></div>
-                        <div class="product__title"><?= get_the_title(); ?></div>
-                        <div class="product__price"><?= $product->get_price_html(); ?></div>
-                    </div>
+                    <a href="<?= get_the_permalink(); ?>">
+                        <div class="product__item">
+                            <div class="product__thumb"><?= woocommerce_get_product_thumbnail(); ?></div>
+                            <div class="product__title"><?= get_the_title(); ?></div>
+                            <div class="product__price"><?= $product->get_price_html(); ?></div>
+                        </div>
+                    </a>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
             <?php endif; ?>
