@@ -313,12 +313,20 @@ header.header {
     background-blend-mode: darken;
     border-radius: 20px;
     background-size: cover;
+    cursor: pointer;
 
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+}
+.swiper-slide.swiper-slide-next .bill__inner {
+    background-color: hsla(0,0%,100%,.24);
+    transition: background-color .15s;
+}
+.swiper-slide.swiper-slide-next .bill__inner:hover {
+    background-color: rgba(255,255,255,.4);
 }
 .bill__inner {
     width: 100%;
