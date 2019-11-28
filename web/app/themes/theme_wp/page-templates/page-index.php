@@ -34,51 +34,62 @@
             <div class="slider__wrap">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image: url(/app/uploads/2019/11/s1880x760.png)">
+                        <a class="swiper-slide" href="#">
                             <div class="bill__inner">
+                                <div class="bill__bg">
+                                    <img src="/app/uploads/2019/11/s1880x760.png" alt="Купить носки в розницу">
+                                </div>
                                 <div class="bill__top">Мужские носки</div>
                                 <div class="bill__bottom">
                                     <div class="bill__title">Чёрная пятница</div>
                                     <div class="bill__info">6 акций</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image: url(/app/uploads/2019/11/s1880x760.png)">
+                        </a>
+                        <a class="swiper-slide" href="#">
                             <div class="bill__inner">
+                                <div class="bill__bg">
+                                    <video loop muted autoplay>
+                                        <source src="/app/uploads/2019/11/allj.mp4" type="video/mp4" poster="/app/uploads/2019/11/allj.png">
+                                    </video>
+                                </div>
                                 <div class="bill__top">Женские носки</div>
                                 <div class="bill__bottom">
                                     <div class="bill__title">Чёрная пятница</div>
                                     <div class="bill__info">5 акций</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image: url(/app/uploads/2019/11/s1880x760.png)">
+                        </a>
+                        <a class="swiper-slide" href="#">
                             <div class="bill__inner">
+                                <img src="/app/uploads/2019/11/s1880x760.png" alt="Купить носки в розницу" class="bill__bg">
                                 <div class="bill__top">Детские носки</div>
                                 <div class="bill__bottom">
                                     <div class="bill__title">Чёрная пятница</div>
                                     <div class="bill__info">6 акций</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image: url(/app/uploads/2019/11/s1880x760.png)">
+                        </a>
+                        <a class="swiper-slide" href="#">
                             <div class="bill__inner">
+                                <img src="/app/uploads/2019/11/s1880x760.png" alt="Купить носки в розницу" class="bill__bg">
                                 <div class="bill__top">Женские колготки</div>
                                 <div class="bill__bottom">
                                     <div class="bill__title">Чёрная пятница</div>
                                     <div class="bill__info">6 акций</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide" style="background-image: url(/app/uploads/2019/11/s1880x760.png)">
+                        </a>
+                        <a class="swiper-slide" href="#">
                             <div class="bill__inner">
+                                <img src="/app/uploads/2019/11/s1880x760.png" alt="Купить носки в розницу" class="bill__bg">
                                 <div class="bill__top">Женские чулки</div>
                                 <div class="bill__bottom">
                                     <div class="bill__title">Чёрная пятница</div>
                                     <div class="bill__info">6 акций</div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="bill__swipe bill__swipe-next"></div>

@@ -313,14 +313,46 @@ header.header {
     background-color: rgba(0,0,0,.1);
     background-blend-mode: darken;
     border-radius: 20px;
-    background-size: cover;
     cursor: pointer;
+    /*background-size: cover;*/
+    overflow-x: hidden;
 
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+}
+.bill__bg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.bill__bg:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+.bill__bg>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.bill__bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -o-object-fit: cover;
 }
 .swiper-slide.swiper-slide-next .bill__inner {
     background-color: hsla(0,0%,100%,.24);
@@ -331,13 +363,14 @@ header.header {
 }
 .bill__inner {
     width: 100%;
-    padding: 30px;
+    /*padding: 30px;*/
     position: relative;
 }
 .bill__top {
     position: absolute;
     z-index: 3;
     top: 30px;
+    left: 30px;
     font-size: 14px;
     font-weight: 400;
     opacity: .7;
@@ -347,7 +380,9 @@ header.header {
     position: absolute;
     text-align: left;
     bottom: 30px;
+    left: 30px;
     width: 90%;
+    z-index: 3;
 }
 .bill__title {
     font-weight: 700;
