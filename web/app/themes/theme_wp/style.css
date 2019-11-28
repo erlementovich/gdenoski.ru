@@ -280,13 +280,14 @@ header.header {
     position: relative;
     width: 100%;
     height: 380px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .swiper-container {
     width: 100%;
     height: 380px;
     margin-bottom: 30px;
-    /*position: static!important;*/
+    border-radius: 20px;
 }
 .swiper-container:before,
 .swiper-container:after {
@@ -331,6 +332,7 @@ header.header {
 .bill__inner {
     width: 100%;
     padding: 30px;
+    position: relative;
 }
 .bill__top {
     position: absolute;
@@ -341,15 +343,17 @@ header.header {
     opacity: .7;
     color: #e3e3e3;
 }
-.bill__title {
-    font-weight: 700;
-    font-size: 40px;
-    color: #fff;
-}
 .bill__bottom {
     position: absolute;
     text-align: left;
     bottom: 30px;
+    width: 90%;
+}
+.bill__title {
+    font-weight: 700;
+    font-size: 40px;
+    color: #fff;
+    max-width: 70%;
 }
 .bill__info {
     margin-top: 10px;
@@ -403,18 +407,94 @@ header.header {
 }
 /* Slider swiper */
 
+/* Section title */
+.section__title {
+    width: 100%;
+    padding-bottom: 30px;
+}
+.section__title h2 {
+    font-size: 34px;
+    font-weight: 700;
+}
+.title-button .button {
+    margin-left: 15px;
+}
+/* End section title */
+
+/* Section socks */
+.socks__wrap {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin-top: 35px;
+    margin-bottom: 0;
+}
+.socks__inner {
+    position: relative;
+    border-radius: 12px;
+    overflow-x: hidden;
+}
+.socks__item {
+    flex-basis: 23%;
+    margin-bottom: 30px;
+    overflow-x: hidden;
+    border-radius: 12px;
+}
+.socks__thumb {
+    height: 276px;
+}
+.socks__thumb img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: absolute;
+    transition: all .3s;
+}
+.socks__thumb:hover img:first-child {
+    left: -100%;
+}
+.socks__thumb:hover img:last-child {
+    left: 0;
+}
+.socks__thumb img:first-child {
+    left: 0;
+}
+.socks__thumb img:last-child {
+    left: 100%;
+}
+.socks__price {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: #fff;
+    background-color: rgb(32,32,32);
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+.socks__price span {
+    font-weight: 700;
+}
+.socks__title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 16px;
+    line-height: 1.2;
+}
+/* End section socks */
+
 /* Front page */
 .page__title {
     padding-bottom: 40px;
 }
-.page__title.front__title {
+.title-button {
     display: flex;
     flex-flow: wrap;
     flex-direction: row;
     align-items: center;
-}
-.front__title .button {
-    margin-left: 15px;
 }
 /* End front page */
 
@@ -447,24 +527,10 @@ header.header {
 /* End subscribe section */
 
 /* Woocommerce */
-.product__thumb img {
-    max-width: 100%;
-    height: 192px;
-    object-fit: cover;
-}
-.page__content>a {
-    flex-basis: 16%;
-}
 .page__content {
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
-}
-.product__item {
-    display: flex;
-    flex-flow: wrap;
-    flex-direction: column;
-    padding-bottom: 30px;
 }
 /* End woocommerce */
 

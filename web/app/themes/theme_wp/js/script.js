@@ -5,8 +5,10 @@ var swiper = new Swiper('.swiper-container', {
     autoplay: {
         delay: 10000,
     },
+    speed: 600,
     navigation: {
-        nextEl: '.bill__swipe-next',
         prevEl: '.bill__swipe-prev',
+        nextEl: '.bill__swipe-next'
     },
 });
+
