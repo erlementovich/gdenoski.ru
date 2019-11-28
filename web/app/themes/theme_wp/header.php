@@ -27,6 +27,14 @@
     <meta property="og:url" content="https://www.gdenoski.ru/" />
     <meta property="og:image" content="" />
     <!-- End OpenGraph -->
+
+    <!--  Temp Swiper  -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <!--  End Temp Swiper  -->
 </head>
 <body class="post-<?= get_the_ID(); ?>">
 <header class="header">
