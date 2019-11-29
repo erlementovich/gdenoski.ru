@@ -171,3 +171,18 @@
 
         return $mimes;
     }
+
+
+    /**
+     * Replace [...] with ... in post excerpt
+     */
+    add_filter('excerpt_more', function($more) {
+        return '...';
+    });
+
+    /**
+     * Change size of post excerpt
+     */
+    add_filter( 'excerpt_length', function(){
+        return 20;
+    } );

@@ -22,6 +22,12 @@
         'order'          => 'DESC',
         'product_cat'    => 'zhenskie-noski'
     ]);
+    $blogPosts = get_posts([
+       'post_type'       => 'post',
+        'posts_per_page' => 4,
+        'orderby'        => 'date',
+        'order'          => 'DESC'
+    ]);
 ?>
 
 <main>
@@ -150,6 +156,31 @@
                     </a>
                 <?php endwhile; ?>
                 <?php wp_reset_query(); ?>
+                </section>
+            <?php endif; ?>
+
+
+            <?php if ( $blogPosts ): ?>
+                <section class="blog__wrap">
+                    <div class="section__title title-button">
+                        <h2>Блог о носках</h2>
+                        <a href="#" class="button button-black">Все новости</a>
+                    </div>
+                    <?php foreach( $blogPosts as $post ):
+                        setup_postdata( $post ); ?>
+                        <a class="blog__item" href="<?php the_permalink(); ?>">
+                            <div class="blog__inner">
+                                <div class="blog__thumb">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <div class="blog__title"><?php the_title(); ?></div>
+                                <div class="blog__excerpt">
+                                    <?php the_excerpt(); ?>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endforeach;
+                          wp_reset_postdata(); ?>
                 </section>
             <?php endif; ?>
         </div>

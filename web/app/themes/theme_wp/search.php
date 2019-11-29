@@ -31,7 +31,7 @@ get_header(); ?>
                     <?php endwhile; ?>
 
                 <?php else : ?>
-
+                    <h1 class="page-title">Ничего не удалось найти по запросу: <?= get_search_query(); ?></h1>
                 <?php endif; ?>
 
             </div><!-- #content .site-content -->
