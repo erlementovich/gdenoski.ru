@@ -12,3 +12,4 @@
         $productTitle = get_the_title();
         echo "<img src='{$secondImage}' alt='{$productTitle}'></div>";
     }, 10);
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');

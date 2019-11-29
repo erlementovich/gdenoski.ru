@@ -719,6 +719,24 @@ header.header {
 }
 /* End woocommerce listing */
 
+/* Single socks */
+.socks__single {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.socks__single .wp-post-image {
+    max-width: 100%;
+}
+.socks__single .woocommerce-product-gallery {
+    width: 45%;
+
+}
+.socks__single .summary.entry-summary {
+    width: 50%;
+}
+/* End single socks */
+
 
 /* Footer */
 footer {
