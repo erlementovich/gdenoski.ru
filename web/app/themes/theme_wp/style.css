@@ -610,6 +610,62 @@ header.header {
 }
 /* End subscribe section */
 
+
+
+/* Afisha section */
+.afisha {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+}
+.afisha__item-wrap {
+    width: 24%;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.afisha__item {
+    display: block;
+    padding: 24px 26px;
+    color: #fff!important;
+    font-weight: 700;
+    height: 118px;
+    position: relative;
+    border-radius: 10px;
+}
+.afisha-hasbg .afisha__item {
+    background-color: rgba(0,0,0,.2);
+}
+.afisha__item-wrap:hover .afisha__item {
+    background-color: rgba(0,0,0,.1);
+}
+.afisha-hasbg:hover .afisha__item {
+    background-color: rgba(0,0,0,.3);
+}
+.afisha__img {
+    text-align: right;
+}
+.afisha__img img {
+    width: 40px;
+}
+.afisha__text {
+    font-weight: 700;
+    width: 80%;
+    position: absolute;
+    bottom: 20px;
+    font-size: 16px;
+}
+/* End afisha section */
+
+
+
+
+
+
+
+
 /* Woocommerce */
 .page__content {
     display: flex;

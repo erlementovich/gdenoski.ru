@@ -37,6 +37,9 @@
             <a href="#" class="button button-black">Все носки</a>
         </div>
         <div class="page__content">
+
+
+            <!--  Start Slider section  -->
             <div class="slider__wrap">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -101,7 +104,10 @@
                 <div class="bill__swipe bill__swipe-next"></div>
                 <div class="bill__swipe bill__swipe-prev"></div>
             </div>
+            <!--  End Slider section  -->
 
+
+            <!--  Start Male section  -->
             <?php if ($maleSocks) : ?>
                 <section class="socks__wrap">
                     <div class="section__title title-button">
@@ -129,8 +135,51 @@
                 <?php wp_reset_query(); ?>
                 </section>
             <?php endif; ?>
+            <!--  End Male section  -->
 
 
+            <!--  Start Afisha section  -->
+            <section class="afisha">
+                <div class="section__title">
+                    <h2>Обратите внимание</h2>
+                </div>
+                <div class="afisha__item-wrap afisha-hasbg" style="background-image: url(/app/uploads/2019/11/skidki.png);">
+                    <a href="/konstruktor-zakaza-noskov" class="afisha__item">
+                        <div class="afisha__img">
+                            <img src="/app/uploads/2019/11/noski_online.svg" alt="Скидки на лимитированные коллекции носков" class="a3-no-load">
+                        </div>
+                        <div class="afisha__text">Скидки на лимитированные коллекции носков</div>
+                    </a>
+                </div>
+                <div class="afisha__item-wrap" style="background-color: #F82F2F;">
+                    <a href="/programma-lojalnosti" class="afisha__item">
+                        <div class="afisha__img">
+                            <img src="/app/uploads/2019/11/skidki_noski_optom.svg" alt="Получайте до 30% от суммы заказ баллами" class="a3-no-load">
+                        </div>
+                        <div class="afisha__text">Получайте до 30% от суммы заказ баллами</div>
+                    </a>
+                </div>
+                <div class="afisha__item-wrap" style="background-color: #FFA523;">
+                    <a href="/na-zakaz" class="afisha__item">
+                        <div class="afisha__img">
+                            <img src="/app/uploads/2019/11/noski_na_zakaz_35_rub.svg" alt="Дарите впечатления с сертификатами на носки Гденоски" class="a3-no-load">
+                        </div>
+                        <div class="afisha__text">Дарите впечатления с сертификатами на носки Гденоски</div>
+                    </a>
+                </div>
+                <div class="afisha__item-wrap" style="background-color: #31D665;">
+                    <a href="/menedzher-po-prodazham" class="afisha__item">
+                        <div class="afisha__img">
+                            <img src="/app/uploads/2019/11/zarabativai_s_nami.svg" alt="Заказывайте носки на заказ по вашему дизайну" class="a3-no-load">
+                        </div>
+                        <div class="afisha__text">Заказывайте носки "На заказ" по вашему дизайну</div>
+                    </a>
+                </div>
+            </section>
+            <!--  End Afisha section  -->
+
+
+            <!--  Start Female section  -->
             <?php if ($femaleSocks) : ?>
                 <section class="socks__wrap">
                     <div class="section__title title-button">
@@ -158,8 +207,10 @@
                 <?php wp_reset_query(); ?>
                 </section>
             <?php endif; ?>
+            <!--  End Female section  -->
 
 
+            <!--  Start Blog section  -->
             <?php if ( $blogPosts ): ?>
                 <section class="blog__wrap">
                     <div class="section__title title-button">
@@ -183,6 +234,9 @@
                           wp_reset_postdata(); ?>
                 </section>
             <?php endif; ?>
+            <!--  End Blog section  -->
+
+
         </div>
     </div>
 </main>
