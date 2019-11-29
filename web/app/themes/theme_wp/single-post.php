@@ -9,14 +9,14 @@
 
 <main>
     <div class="container">
-        <h1>Одинокая запись: <?php the_title(); ?></h1>
-        <?php
-            while ( have_posts() ) :
-                the_post();
-                the_content();
-
-            endwhile;
-        ?>
+        <?php while ( have_posts() ) :
+            the_post(); ?>
+            <div class="singlepost">
+                <div class="singlepost__thumb"><?php the_post_thumbnail(); ?></div>
+                <div class="singlepost__title"><h1><?php the_title(); ?></h1></div>
+                <div class="singlepost__content"><?php the_content(); ?></div>
+            </div>
+            <?php endwhile; ?>
     </div>
 </main>
 <?php get_footer(); ?>

@@ -13,5 +13,7 @@
 
     require_once( __DIR__ . '/functions/register_types.php');
 
+    require_once( __DIR__ . '/functions/woo_functions.php');
+
 
     /** Functions for work */
