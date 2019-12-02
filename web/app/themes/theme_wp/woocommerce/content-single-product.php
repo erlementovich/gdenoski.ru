@@ -31,6 +31,10 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
+
+<?php if (class_exists('WooCommerce') && is_woocommerce()) : ?>
+    <?php woocommerce_breadcrumb(); ?>
+<?php endif; ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'socks__single', $product ); ?>>
 	<?php
 	/**

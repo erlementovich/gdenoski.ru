@@ -9,6 +9,7 @@
 
 <main>
     <div class="container">
+        <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
         <?php while ( have_posts() ) :
             the_post(); ?>
             <div class="singlepost">

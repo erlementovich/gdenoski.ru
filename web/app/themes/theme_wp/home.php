@@ -15,6 +15,7 @@
     <div class="container">
         <div class="page__title">
             <h1>Блог</h1>
+            <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
         </div>
         <section class="blog__wrap">
             <?php if ( $posts ) : ?>

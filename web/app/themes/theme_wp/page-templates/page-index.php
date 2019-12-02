@@ -212,7 +212,7 @@
 
             <!--  Start Blog section  -->
             <?php if ( $blogPosts ): ?>
-                <section class="blog__wrap">
+                <section class="blog__wrap section__blog">
                     <div class="section__title title-button">
                         <h2>Блог о носках</h2>
                         <a href="#" class="button button-black">Все новости</a>

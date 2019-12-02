@@ -542,8 +542,10 @@ header.header {
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
-    margin-top: 35px;
     margin-bottom: 0;
+}
+.section__blog {
+    margin-top: 35px;
 }
 .blog__item {
     flex-basis: 23%;
@@ -676,6 +678,24 @@ header.header {
 /* End afisha section */
 
 
+/* Breadcrumbs */
+.kama_breadcrumbs {
+    padding-bottom: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    color: rgba(0,0,0,.7);
+}
+.page__title .kama_breadcrumbs {
+    padding-top: 5px;
+    padding-bottom: 0;
+}
+.kama_breadcrumbs span {
+    font-weight: 700;
+    color: rgba(0,0,0,.7);
+}
+/* End breadcrumbs */
+
+
 /* Single post */
 .singlepost__thumb img {
     width: 100%;
@@ -708,6 +728,7 @@ header.header {
     display: flex;
     flex-flow: wrap;
     justify-content: space-between;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -792,6 +813,12 @@ header.header {
     width: 50%;
 }
 /* End single socks */
+
+/* Related socks */
+.socks__wrap.socks__related .section__title {
+    padding-bottom: 0;
+}
+/* End related socks */
 
 
 /* Footer */

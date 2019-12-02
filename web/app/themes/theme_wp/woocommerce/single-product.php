@@ -54,7 +54,6 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-<?php setcookie('viewedSocks[' . $post->ID . ']', $post->ID, time()+3600); ?>
 
 <?php get_footer( 'shop' );
 

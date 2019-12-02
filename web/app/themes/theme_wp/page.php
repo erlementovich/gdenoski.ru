@@ -10,7 +10,10 @@
 
 <main>
     <div class="container">
-        <h1>Одиночная страница без шаблона: <?php the_title(); ?></h1>
+        <div class="page__title">
+            <h1><?php the_title(); ?></h1>
+            <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
+        </div>
         <?php
             while ( have_posts() ) :
                 the_post();
