@@ -208,6 +208,21 @@ header.header {
 .header__bottom {
     height: 52px;
 }
+.header__menu.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 99999999999;
+    background-color: #ffff;
+    padding: 20px 0 4px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.11);
+}
+.header__menu.sticky>ul {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .header__menu>ul {
     display: flex;
     flex-wrap: wrap;
@@ -242,7 +257,6 @@ header.header {
 .header__menu .sub-menu {
     position: absolute;
     width: 200px;
-    padding: 10px 0 ;
     border-radius: 12px;
     background-color: var(--second-color);
     box-shadow: rgba(0, 0, 0, 0.23) 0px 10px 40px;
@@ -252,6 +266,9 @@ header.header {
     transition: visibility .3s, opacity 0s;
 }
 .header__menu>ul>li:hover>a {
+    margin-bottom: 16px;
+}
+.header__menu.sticky>ul>li>a {
     margin-bottom: 16px;
 }
 .header__menu>ul>li:hover .sub-menu {
@@ -709,6 +726,9 @@ header.header {
     line-height: 32px;
     padding: 0 12px;
     border-radius: 20px;
+    font-weight: 700;
+}
+.socks__inner .price span {
     font-weight: 700;
 }
 .woocommerce-loop-product__title {

@@ -4,7 +4,7 @@
             'menu'            => 'HeaderMenu',
             'container'       => 'nav',
             'container_class' => 'header__menu',
-            'container_id'    => '',
+            'container_id'    => 'navbar',
             'items_wrap'      => '<ul>%3$s</ul>',
             'menu_id'         => '',
             'fallback_cb'     => 'wp_page_menu',

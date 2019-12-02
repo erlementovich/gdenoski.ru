@@ -25,7 +25,7 @@
         </div>
         <div class="footer__bottom">
             <div class="footer__copy">
-                © 2019 <a href="/">www.gdenoski.ru</a>
+                © 2019, ИП Гарипова Нонна Камоевна, ИНН: 165608813105, ОРГН: 310169004700047
             </div>
             <div class="footer__bottomlist">
                 <div class="bottomlist__item">
