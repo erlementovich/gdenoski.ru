@@ -679,17 +679,20 @@ header.header {
 
 
 /* Breadcrumbs */
-.kama_breadcrumbs {
+.kama_breadcrumbs,
+.woocommerce-breadcrumb {
     padding-bottom: 30px;
     font-weight: 700;
     font-size: 14px;
     color: rgba(0,0,0,.7);
 }
-.page__title .kama_breadcrumbs {
+.page__title .kama_breadcrumbs,
+.page__title .woocommerce-breadcrumb {
     padding-top: 5px;
     padding-bottom: 0;
 }
-.kama_breadcrumbs span {
+.kama_breadcrumbs span,
+.woocommerce-breadcrumb a {
     font-weight: 700;
     color: rgba(0,0,0,.7);
 }
@@ -807,10 +810,34 @@ header.header {
 }
 .socks__single .woocommerce-product-gallery {
     width: 45%;
-
 }
 .socks__single .summary.entry-summary {
     width: 50%;
+}
+/* Summary */
+.socks__single .summary .price {
+    padding: 20px 0;
+}
+.socks__single .summary .price span {
+    font-weight: 700;
+    font-size: 20px;
+}
+.variations .label label {
+    font-size: 18px;
+}
+
+/* Tabs */
+.woocommerce-tabs {
+    width: 100%;
+}
+.woocommerce-tabs .tabs {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+}
+.woocommerce-tabs .tabs li {
+    list-style-type: none;
+    padding: 10px 20px;
 }
 /* End single socks */
 
