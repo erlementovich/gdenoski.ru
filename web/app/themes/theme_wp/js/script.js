@@ -34,3 +34,26 @@ function callSticky() {
         navbar.classList.remove("sticky");
     }
 }
+
+
+/**
+ * QTY increment/decrement
+ */
+
+var qtyer = document.querySelector('.input-text.qty');
+
+document.querySelector('.qty-minus').addEventListener('click', function(e) {
+    e.preventDefault();
+    var qtyerVal = parseInt(qtyer.value);
+    qtyer.value = qtyerVal <= 1 ? 1 : qtyerVal - 1;
+});
+
+document.querySelector('.qty-plus').addEventListener('click', function(e) {
+    e.preventDefault();
+    var qtyerVal = parseInt(qtyer.value);
+    qtyer.value = qtyerVal + 1;
+});
+
+qtyer.onchange = function() {
+    qtyer.value = qtyer.value <= 1 ? 1 : qtyer.value;
+};
