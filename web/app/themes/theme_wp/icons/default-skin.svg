@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="59px" viewBox="0 0 148 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>default-skin</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="default-skin">
+            <path d="M54.002,44.5 L54.002,48.268 C47.695,49.108 44.818,54.018 44,58 C46.22,55.17 49.564,52.902 54.002,52.902 L54.002,56.5 L60,50.585 L54.002,44.5 Z" id="Shape" fill="#222222" fill-rule="nonzero"></path>
+            <g id="Group" fill="#222222" fill-rule="nonzero">
+                <path d="M0,14 L0,9 L2,9 L2,12 L5,12 L5,14 L0,14 Z M0,0 L5,0 L5,2 L2,2 L2,5 L0,5 L0,0 Z M18,0 L18,5 L16,5 L16,2 L13,2 L13,0 L18,0 Z M18,14 L13,14 L13,12 L16,12 L16,9 L18,9 L18,14 Z" id="Shape"></path>
+            </g>
+            <g id="Group" transform="translate(44.000000, 0.000000)" fill="#222222" fill-rule="nonzero">
+                <path d="M5,9 L5,14 L3,14 L3,11 L0,11 L0,9 L5,9 Z M5,5 L0,5 L0,3 L3,3 L3,0 L5,0 L5,5 Z M13,5 L13,0 L15,0 L15,3 L18,3 L18,5 L13,5 Z M13,9 L18,9 L18,11 L15,11 L15,14 L13,14 L13,9 Z" id="Shape"></path>
+            </g>
+            <polygon id="Path" fill="#222222" fill-rule="nonzero" points="7.586 51 1.93 45.344 3.344 43.93 9 49.586 14.656 43.93 16.07 45.344 10.414 51 16.07 56.656 14.656 58.07 9 52.414 3.344 58.07 1.93 56.656"></polygon>
+            <polygon id="Path" fill="#222222" fill-rule="nonzero" points="98.785 50.03 97 48.5 100 45 90 45 90 43 100 43 97 39.5 98.785 38.032 104 44"></polygon>
+            <polygon id="Path" fill="#222222" fill-rule="nonzero" points="139.215 50.03 141 48.5 138 45 148 45 148 43 138 43 141 39.5 139.215 38.032 134 44"></polygon>
+            <g id="Group" transform="translate(134.000000, 1.000000)">
+                <polygon id="Rectangle-11" fill="#222222" fill-rule="nonzero" points="13.957 12.543 10.707 9.293 9.294 10.707 12.544 13.957"></polygon>
+                <path d="M5.5,11 C8.538,11 11,8.538 11,5.5 C11,2.462 8.538,0 5.5,0 C2.462,0 0,2.462 0,5.5 C0,8.538 2.462,11 5.5,11 Z" id="Oval-1" stroke="#222222" stroke-width="1.5"></path>
+                <polygon id="Path" fill="#222222" fill-rule="nonzero" points="3 5 8 5 8 6 3 6"></polygon>
+            </g>
+            <g id="Group" transform="translate(90.000000, 1.000000)">
+                <polygon id="Path" fill="#222222" fill-rule="nonzero" points="13.957 12.543 12.543 13.957 9.293 10.707 10.707 9.293"></polygon>
+                <path d="M5.5,11 C8.538,11 11,8.538 11,5.5 C11,2.462 8.538,0 5.5,0 C2.462,0 0,2.462 0,5.5 C0,8.538 2.462,11 5.5,11 Z" id="Path" stroke="#222222" stroke-width="1.5"></path>
+                <polygon id="Path" fill="#222222" fill-rule="nonzero" points="3 5 8 5 8 6 3 6"></polygon>
+                <polygon id="Path" fill="#222222" fill-rule="nonzero" points="6.043 3.008 5.958 8.008 4.958 7.991 5.043 2.991"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
