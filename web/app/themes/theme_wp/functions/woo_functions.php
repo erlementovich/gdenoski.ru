@@ -53,6 +53,16 @@
     /**
      * Slider support
      */
-    add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+
+    /**
+     * Remove Downloads from account page
+     */
+    add_filter('woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999);
+    function custom_remove_downloads_my_account($items) {
+        unset( $items['downloads'] );
+    
+        return $items;
+    }

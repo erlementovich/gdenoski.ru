@@ -36,7 +36,7 @@
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <!--  End Temp Swiper  -->
 </head>
-<body class="post-<?= get_the_ID(); ?>">
+<body class="post-<?= get_the_ID(); ?> <?php if (is_account_page()) {echo 'account';} ?>">
 <header class="header">
     <div class="header__inner container">
         <div class="header__top">
