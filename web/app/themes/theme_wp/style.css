@@ -1255,6 +1255,7 @@ header.header {
 }
 .shop_table.woocommerce-checkout-review-order-table th {
     text-align: left;
+    width: 70%;
 }
 .shop_table.woocommerce-checkout-review-order-table thead th {
     font-weight: 700;
@@ -1305,6 +1306,10 @@ form.woocommerce-checkout .shop_table .shipping, form.woocommerce-checkout .shop
 .shop_table.woocommerce-checkout-review-order-table tfoot th {
     font-weight: 700;
     color: #222;
+}
+.shop_table.woocommerce-checkout-review-order-table tfoot td {
+
+    text-align: right;
 }
 .checkout_coupon.woocommerce-form-coupon>p:first-child {
     width: 100%;
@@ -1383,7 +1388,7 @@ form.woocommerce-checkout .shop_table .shipping, form.woocommerce-checkout .shop
     min-width: 100%;
     border-radius: 0;
     box-sizing: border-box;
-    height: 100px;
+    height: 200px;
     padding: 20px;
     border-color: #f3f3f3;
     background: #f9f9f9;
