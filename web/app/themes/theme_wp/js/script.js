@@ -13,6 +13,15 @@ var swiper = new Swiper('.swiper-container', {
         prevEl: '.bill__swipe-prev',
         nextEl: '.bill__swipe-next'
     },
+    breakpoints: {
+        767: {
+            pagination: {
+                el: '.bill__pagination',
+                type: 'fraction',
+            },
+            spaceBetween: 0,
+        }
+    }
 });
 /**
  * Sticky header
@@ -40,20 +49,19 @@ function callSticky() {
  * QTY increment/decrement
  */
 
-var qtyer = document.querySelector('.input-text.qty');
-
-document.querySelector('.qty-minus').addEventListener('click', function(e) {
-    e.preventDefault();
-    var qtyerVal = parseInt(qtyer.value);
-    qtyer.value = qtyerVal <= 1 ? 1 : qtyerVal - 1;
+jQuery(document).ready(function($) {
+    $('.qty-minus').on('click', function() {
+        var $qtyer = jQuery(this).siblings('.input-text.qty');
+        var qtyerVal = parseInt($qtyer.val());
+        $qtyer.val(qtyerVal <= 1 ? 1 : qtyerVal -1);
+    });
+    $('.qty-plus').on('click', function() {
+        var $qtyer = jQuery(this).siblings('.input-text.qty');
+        var qtyerVal = parseInt($qtyer.val());
+        $qtyer.val(qtyerVal + 1);
+    });
+    $('.input-text.qty').on('change', function() {
+         $(this).val($(this).val() <= 1 ? 1 : $(this).val());
+    });
 });
 
-document.querySelector('.qty-plus').addEventListener('click', function(e) {
-    e.preventDefault();
-    var qtyerVal = parseInt(qtyer.value);
-    qtyer.value = qtyerVal + 1;
-});
-
-qtyer.onchange = function() {
-    qtyer.value = qtyer.value <= 1 ? 1 : qtyer.value;
-};

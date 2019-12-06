@@ -18,19 +18,17 @@
 defined('ABSPATH') || exit;
 
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div class="woocart__totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
     <?php do_action('woocommerce_before_cart_totals'); ?>
 
     <h2><?php esc_html_e('Cart totals', 'woocommerce'); ?></h2>
 
-    <table cellspacing="0" class="shop_table shop_table_responsive">
-
+    <table>
         <tr class="cart-subtotal">
             <th><?php esc_html_e('Subtotal', 'woocommerce'); ?></th>
             <td data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
         </tr>
-
         <?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
             <tr class="cart-discount coupon-<?php echo esc_attr(sanitize_title($code)); ?>">
                 <th><?php wc_cart_totals_coupon_label($coupon); ?></th>

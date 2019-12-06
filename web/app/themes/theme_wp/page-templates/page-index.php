@@ -28,7 +28,7 @@
         'orderby'        => 'date',
         'order'          => 'DESC'
     ]);
-?>
+    ?>
 
 <main>
     <div class="container">
@@ -101,6 +101,7 @@
                         </a>
                     </div>
                 </div>
+                <div class="bill__pagination"></div>
                 <div class="bill__swipe bill__swipe-next"></div>
                 <div class="bill__swipe bill__swipe-prev"></div>
             </div>
@@ -114,25 +115,30 @@
                         <h2>Мужские носки</h2>
                         <a href="#" class="button button-black">Все мужские носки</a>
                     </div>
-                <?php while ( $maleSocks->have_posts() ) : $maleSocks->the_post();
-                    global $product;
-                    ?>
-                    <a href="<?= get_the_permalink(); ?>" class="socks__item">
-                        <div class="socks__inner">
-                            <div class="socks__thumb">
-                                <?= woocommerce_get_product_thumbnail(); ?>
-                                <?php
-                                    $attachment_ids = $product->get_gallery_image_ids();
-                                    $secondImage = wp_get_attachment_url( $attachment_ids[0] );
+                    <div class="socks__wrap-mobile">
+                        <div class="socks__wrap-mobileinner">
+                            <?php while ($maleSocks->have_posts()) :
+                                $maleSocks->the_post();
+                                global $product;
                                 ?>
-                                <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
-                            </div>
-                            <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                <a href="<?= get_the_permalink(); ?>" class="socks__item">
+                                    <div class="socks__inner">
+                                        <div class="socks__thumb">
+                                            <?= woocommerce_get_product_thumbnail(); ?>
+                                            <?php
+                                                $attachment_ids = $product->get_gallery_image_ids();
+                                                $secondImage = wp_get_attachment_url($attachment_ids[0]);
+                                            ?>
+                                            <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
+                                        </div>
+                                        <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                    </div>
+                                    <div class="socks__title"><?= get_the_title(); ?></div>
+                                </a>
+                            <?php endwhile; ?>
+                            <?php wp_reset_query(); ?>
                         </div>
-                        <div class="socks__title"><?= get_the_title(); ?></div>
-                    </a>
-                <?php endwhile; ?>
-                <?php wp_reset_query(); ?>
+                    </div>
                 </section>
             <?php endif; ?>
             <!--  End Male section  -->
@@ -143,37 +149,41 @@
                 <div class="section__title">
                     <h2>Обратите внимание</h2>
                 </div>
-                <div class="afisha__item-wrap afisha-hasbg" style="background-image: url(/app/uploads/2019/11/skidki.png);">
-                    <a href="#" class="afisha__item">
-                        <div class="afisha__img">
-                            <img src="/app/uploads/2019/11/noski_online.svg" alt="Скидки на лимитированные коллекции носков" class="a3-no-load">
+                <div class="afisha__inner-mobile">
+                    <div class="afisha__inner">
+                        <div class="afisha__item-wrap afisha-hasbg" style="background-image: url(/app/uploads/2019/11/skidki.png);">
+                            <a href="#" class="afisha__item">
+                                <div class="afisha__img">
+                                    <img src="/app/uploads/2019/11/noski_online.svg" alt="Скидки на лимитированные коллекции носков" class="a3-no-load">
+                                </div>
+                                <div class="afisha__text">Скидки на лимитированные коллекции носков</div>
+                            </a>
                         </div>
-                        <div class="afisha__text">Скидки на лимитированные коллекции носков</div>
-                    </a>
-                </div>
-                <div class="afisha__item-wrap" style="background-color: #F82F2F;">
-                    <a href="#" class="afisha__item">
-                        <div class="afisha__img">
-                            <img src="/app/uploads/2019/11/skidki_noski_optom.svg" alt="Получайте до 30% от суммы заказ баллами" class="a3-no-load">
+                        <div class="afisha__item-wrap" style="background-color: #F82F2F;">
+                            <a href="#" class="afisha__item">
+                                <div class="afisha__img">
+                                    <img src="/app/uploads/2019/11/skidki_noski_optom.svg" alt="Получайте до 30% от суммы заказ баллами" class="a3-no-load">
+                                </div>
+                                <div class="afisha__text">Получайте до 30% от суммы заказ баллами</div>
+                            </a>
                         </div>
-                        <div class="afisha__text">Получайте до 30% от суммы заказ баллами</div>
-                    </a>
-                </div>
-                <div class="afisha__item-wrap" style="background-color: #FFA523;">
-                    <a href="#" class="afisha__item">
-                        <div class="afisha__img">
-                            <img src="/app/uploads/2019/11/noski_na_zakaz_35_rub.svg" alt="Дарите впечатления с сертификатами на носки Гденоски" class="a3-no-load">
+                        <div class="afisha__item-wrap" style="background-color: #FFA523;">
+                            <a href="#" class="afisha__item">
+                                <div class="afisha__img">
+                                    <img src="/app/uploads/2019/11/noski_na_zakaz_35_rub.svg" alt="Дарите впечатления с сертификатами на носки Гденоски" class="a3-no-load">
+                                </div>
+                                <div class="afisha__text">Дарите впечатления с сертификатами на носки Гденоски</div>
+                            </a>
                         </div>
-                        <div class="afisha__text">Дарите впечатления с сертификатами на носки Гденоски</div>
-                    </a>
-                </div>
-                <div class="afisha__item-wrap" style="background-color: #31D665;">
-                    <a href="#" class="afisha__item">
-                        <div class="afisha__img">
-                            <img src="/app/uploads/2019/11/zarabativai_s_nami.svg" alt="Заказывайте носки на заказ по вашему дизайну" class="a3-no-load">
+                        <div class="afisha__item-wrap" style="background-color: #31D665;">
+                            <a href="#" class="afisha__item">
+                                <div class="afisha__img">
+                                    <img src="/app/uploads/2019/11/zarabativai_s_nami.svg" alt="Заказывайте носки на заказ по вашему дизайну" class="a3-no-load">
+                                </div>
+                                <div class="afisha__text">Заказывайте носки "На заказ" по вашему дизайну</div>
+                            </a>
                         </div>
-                        <div class="afisha__text">Заказывайте носки "На заказ" по вашему дизайну</div>
-                    </a>
+                    </div>
                 </div>
             </section>
             <!--  End Afisha section  -->
@@ -186,52 +196,61 @@
                         <h2>Женские носки</h2>
                         <a href="#" class="button button-black">Все женские носки</a>
                     </div>
-                <?php while ( $femaleSocks->have_posts() ) : $femaleSocks->the_post();
-                    global $product;
-                    ?>
-                    <a href="<?= get_the_permalink(); ?>" class="socks__item">
-                        <div class="socks__inner">
-                            <div class="socks__thumb">
-                                <?= woocommerce_get_product_thumbnail(); ?>
-                                <?php
-                                    $attachment_ids = $product->get_gallery_image_ids();
-                                    $secondImage = wp_get_attachment_url( $attachment_ids[0] );
+                    <div class="socks__wrap-mobile">
+                        <div class="socks__wrap-mobileinner">
+                            <?php while ($femaleSocks->have_posts()) :
+                                $femaleSocks->the_post();
+                                global $product;
                                 ?>
-                                <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
-                            </div>
-                            <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                <a href="<?= get_the_permalink(); ?>" class="socks__item">
+                                    <div class="socks__inner">
+                                        <div class="socks__thumb">
+                                            <?= woocommerce_get_product_thumbnail(); ?>
+                                            <?php
+                                                $attachment_ids = $product->get_gallery_image_ids();
+                                                $secondImage = wp_get_attachment_url($attachment_ids[0]);
+                                            ?>
+                                            <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
+                                        </div>
+                                        <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                    </div>
+                                    <div class="socks__title"><?= get_the_title(); ?></div>
+                                </a>
+                            <?php endwhile; ?>
+                            <?php wp_reset_query(); ?>
                         </div>
-                        <div class="socks__title"><?= get_the_title(); ?></div>
-                    </a>
-                <?php endwhile; ?>
-                <?php wp_reset_query(); ?>
+                    </div>
                 </section>
             <?php endif; ?>
             <!--  End Female section  -->
 
 
             <!--  Start Blog section  -->
-            <?php if ( $blogPosts ): ?>
+            <?php if ($blogPosts) : ?>
                 <section class="blog__wrap section__blog">
                     <div class="section__title title-button">
                         <h2>Блог о носках</h2>
                         <a href="#" class="button button-black">Все новости</a>
                     </div>
-                    <?php foreach( $blogPosts as $post ):
-                        setup_postdata( $post ); ?>
-                        <a class="blog__item" href="<?php the_permalink(); ?>">
-                            <div class="blog__inner">
-                                <div class="blog__thumb">
-                                    <?php the_post_thumbnail(); ?>
-                                </div>
-                                <div class="blog__title"><?php the_title(); ?></div>
-                                <div class="blog__excerpt">
-                                    <?php the_excerpt(); ?>
-                                </div>
-                            </div>
-                        </a>
-                    <?php endforeach;
-                          wp_reset_postdata(); ?>
+                    <div class="blog__wrap-mobile">
+                        <div class="blog__wrap-inner">
+                            <?php foreach ($blogPosts as $post) :
+                                setup_postdata($post); ?>
+                                <a class="blog__item" href="<?php the_permalink(); ?>">
+                                    <div class="blog__inner">
+                                        <div class="blog__thumb">
+                                            <?php the_post_thumbnail(); ?>
+                                        </div>
+                                        <div class="blog__title"><?php the_title(); ?></div>
+                                        <div class="blog__excerpt">
+                                            <?php the_excerpt(); ?>
+                                        </div>
+                                    </div>
+                                </a>
+                            <?php endforeach;
+                                  wp_reset_postdata(); ?>
+                        </div>
+                    </div>
                 </section>
             <?php endif; ?>
             <!--  End Blog section  -->

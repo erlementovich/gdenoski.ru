@@ -22,7 +22,7 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_account_orders', $has_orders); ?>
 
 <?php if ($has_orders) : ?>
-    <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table account__orders">
+    <table class="account__orders">
         <thead>
             <tr>
                 <?php foreach (wc_get_account_orders_columns() as $column_id => $column_name) : ?>
@@ -95,9 +95,9 @@ do_action('woocommerce_before_account_orders', $has_orders); ?>
     <?php endif; ?>
 
 <?php else : ?>
-    <div class="woocommerce-message woocommerce-message--info woocommerce-Message woocommerce-Message--info woocommerce-info account__orders">
+    <div class="account__orders account__orders-empty">
         <p><?php esc_html_e('No order has been made yet.', 'woocommerce'); ?></p>
-        <a class="woocommerce-Button button woobutton" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>">
+        <a class="woobutton button" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>">
             <?php esc_html_e('Browse products', 'woocommerce'); ?>
         </a>
     </div>
