@@ -132,6 +132,7 @@
                                             <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
                                         </div>
                                         <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                        <div class="socks__discount">-30%</div>
                                     </div>
                                     <div class="socks__title"><?= get_the_title(); ?></div>
                                 </a>
@@ -213,6 +214,7 @@
                                             <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
                                         </div>
                                         <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                        <div class="socks__discount">-30%</div>
                                     </div>
                                     <div class="socks__title"><?= get_the_title(); ?></div>
                                 </a>

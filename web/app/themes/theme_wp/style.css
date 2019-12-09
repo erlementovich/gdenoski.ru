@@ -503,7 +503,7 @@ header.header {
     flex-basis: 23%;
     margin-bottom: 30px;
     overflow-x: hidden;
-    border-radius: 12px;
+    /*border-radius: 12px;*/
 }
 .socks__thumb {
     height: 276px;
@@ -540,6 +540,18 @@ header.header {
     font-weight: 700;
 }
 .socks__price span {
+    font-weight: 700;
+}
+.socks__discount {
+    position: absolute;
+    bottom: 12px;
+    left: 103px;
+    color: #fff;
+    background-color: #E95226;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 20px;
     font-weight: 700;
 }
 .socks__title {
@@ -1660,6 +1672,54 @@ footer {
         }
         .row {
             width: auto;
+        }
+        /* Shop */
+        .wootop {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .products.columns-4 {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: auto;
+        }
+        .products.columns-4 .product {
+            flex-basis: 100%;
+        }
+        .woocommerce-pagination {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .woocommerce-breadcrumb {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .socks__single .woocommerce-product-gallery {
+            padding-left: 15px;
+            padding-right: 15px;
+            width: auto;
+        }
+        .woocommerce-product-gallery .flex-viewport {
+            flex-basis: auto;
+        }
+        .flex-control-nav.flex-control-thumbs {
+            flex-basis: auto;
+            order: 2;
+        }
+        .socks__single .summary.entry-summary {
+            width: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+            order: 0;
+        }
+        .variations_button .single_add_to_cart_button,
+        .variations_button .quantity{
+            flex-basis: 48%;
+        }
+        .woocommerce-tabs {
+            width: auto;
+            padding-left: 15px;
+            padding-right: 15px;
         }
     }
 /* End media queries */

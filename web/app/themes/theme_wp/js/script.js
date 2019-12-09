@@ -14,12 +14,11 @@ var swiper = new Swiper('.swiper-container', {
         nextEl: '.bill__swipe-next'
     },
     breakpoints: {
-        767: {
-            pagination: {
-                el: '.bill__pagination',
-                type: 'fraction',
-            },
-            spaceBetween: 0,
+        640: {
+            // pagination: {
+            //     el: '.bill__pagination',
+            //     type: 'fraction',
+            // },
         }
     }
 });
