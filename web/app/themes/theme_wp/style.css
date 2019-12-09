@@ -385,11 +385,18 @@ header.header {
     border-radius: 20px;
 }
 .swiper-slide.swiper-slide-next .bill__inner {
+    /*background-color: hsla(0,0%,100%,.24);*/
+    /*transition: background-color .15s;*/
+}
+.swiper-slide.swiper-slide-next .bill__bg:before {
     background-color: hsla(0,0%,100%,.24);
     transition: background-color .15s;
 }
-.swiper-slide.swiper-slide-next .bill__inner:hover {
+.swiper-slide.swiper-slide-next .bill__bg:hover:before {
     background-color: rgba(255,255,255,.4);
+}
+.swiper-slide.swiper-slide-next .bill__inner:hover {
+    /*background-color: rgba(255,255,255,.4);*/
 }
 .bill__inner {
     width: 100%;
