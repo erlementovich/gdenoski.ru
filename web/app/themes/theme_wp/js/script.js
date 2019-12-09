@@ -1,7 +1,7 @@
 /**
  * Init slider
  */
-var prevSlide;
+
 var swiper = new Swiper('.swiper-container', {
     slidesPerView: 'auto',
     spaceBetween: 20,
@@ -23,7 +23,7 @@ var swiper = new Swiper('.swiper-container', {
                     this.play();
                 });
 
-                var prevIn = swiper.previousIndex-6;
+                var prevIn = parseInt(swiper.previousIndex-6);
                 let $prevSlide = $('[data-swiper-slide-index="' + prevIn + '"]');
                 $prevSlide.find('video').each(function () {
                     this.pause();
