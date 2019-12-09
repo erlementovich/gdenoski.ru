@@ -1451,7 +1451,6 @@ form.woocommerce-checkout .shop_table .shipping, form.woocommerce-checkout .shop
 footer {
     background-color: rgb(237, 237, 237);
     padding-top: 50px;
-    padding-bottom: 50px;
 }
 .footer__columns {
     justify-content: space-between;
@@ -1478,17 +1477,28 @@ footer {
     color: rgb(255, 0, 0);
 }
 .footer__bottom {
+    font-size: 12px;
+    color: rgba(0,0,0,.5);
+    margin-top: 15px;
+}
+.footer__bottom p {
+    padding-top: 15px;
+}
+.footer__info {
     margin-top: 30px;
     display: flex;
     flex-flow: row;
     font-size: 12px;
     color: rgba(0,0,0,.5);
+    background-color: #e6e6e6;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
-.footer__bottom a {
+.footer__info a {
     color: rgba(0,0,0,.5);
     font-size: 12px;
 }
-.footer__bottom a:hover {
+.footer__info a:hover {
     color: rgb(255,0,0);
 }
 .footer__copy {
