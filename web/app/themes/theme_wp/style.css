@@ -500,12 +500,15 @@ header.header {
 .socks__wrap-mobileinner {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .socks__inner {
     position: relative;
     border-radius: 12px;
     overflow-x: hidden;
+}
+.socks__wrap-mobileinner>.socks__item:not(:nth-child(4n+4)) {
+    margin-right: 2.66666667%;
 }
 .socks__item {
     flex-basis: 23%;
@@ -578,10 +581,13 @@ header.header {
 .blog__wrap-inner {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .section__blog {
     margin-top: 35px;
+}
+.blog__wrap-inner>.blog__item:not(:nth-child(4n+4)) {
+    margin-right: 2.66666667%;
 }
 .blog__item {
     flex-basis: 23%;
@@ -1556,8 +1562,14 @@ footer {
         .section__title,
         .page__title{
             padding-left: 15px;
+            padding-right: 15px;
+            width: auto;
         }
-        .title-button .button {
+        .section__title h2 {
+            width: 100%;
+        }
+        .title-button .button,
+        .section__blog .title-button .button{
             margin-left: 0;
             margin-top: 15px;
         }
@@ -1634,10 +1646,6 @@ footer {
             margin-right: 15px;
         }
         /* Blog section */
-        .section__blog .title-button .button {
-            margin-top: 6px;
-            margin-left: 17px;
-        }
         .blog__wrap {
             overflow-x: hidden;
         }
@@ -1650,6 +1658,7 @@ footer {
         .blog__wrap-inner {
             width: max-content;
             flex-wrap: nowrap;
+            justify-content: space-between;
         }
         .blog__item {
             width: 276px;
@@ -1657,6 +1666,17 @@ footer {
         }
         .blog__wrap-inner>.blog__item:first-child {
             margin-left: 15px;
+        }
+        .blog__wrap-inner>.blog__item:last-child,
+        .socks__wrap-mobileinner>.socks__item:last-child {
+            /*margin-right: 0;*/
+        }
+        .socks__wrap-mobileinner {
+            justify-content: space-between;
+        }
+        .blog__wrap-inner>.blog__item:not(:nth-child(4n+4)),
+        .socks__wrap-mobileinner>.socks__item:not(:nth-child(4n+4)) {
+            margin-right: 15px;
         }
 
         /* Footer */
