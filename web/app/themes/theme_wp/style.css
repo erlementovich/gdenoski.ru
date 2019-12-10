@@ -573,6 +573,12 @@ header.header {
 }
 /* End section socks */
 
+/* Socks viewed КОСТЫЛЬ ПИЗДЕЦ */
+    .socks__viewed {
+
+    }
+/* End Socks viewed */
+
 
 /* Blog section */
 .blog__wrap {

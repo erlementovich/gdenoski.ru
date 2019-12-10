@@ -286,29 +286,29 @@
                     <a href="/magazin" class="button button-black">Все носки</a>
                 </div>
                 <div class="socks__wrap-mobile">
-                    <div class="socks__wrap-mobileinner">
+                    <div class="socks__wrap-mobileinner socks__viewed">
                         <?php
-                        foreach ($_COOKIE['viewedProd'] as $viewedProdId):
-                            $viewed = wc_get_product( $viewedProdId );
+                        foreach ($_COOKIE['viewedProd'] as $viewedProdId) :
+                            $viewed = wc_get_product($viewedProdId);
                             ?>
-                            <a href="<?php echo get_the_permalink($viewedProdId); ?>" class="socks__item">
-                                <div class="socks__inner">
-                                    <div class="socks__thumb">
-                                        <img src="<?php echo get_the_post_thumbnail_url($viewedProdId) ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                <a href="<?php echo get_the_permalink($viewedProdId); ?>" class="socks__item">
+                                    <div class="socks__inner">
+                                        <div class="socks__thumb">
+                                            <img src="<?php echo get_the_post_thumbnail_url($viewedProdId) ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
                                         <?php
                                             $attachment_ids = $viewed->get_gallery_image_ids();
                                             $secondImage = wp_get_attachment_url($attachment_ids[0]);
                                         ?>
-                                        <img src="<?php echo $secondImage; ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                            <img src="<?php echo $secondImage; ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                        </div>
+                                        <div class="socks__price"><?php echo $viewed->get_price_html(); ?></div>
+                                        <div class="socks__discount">-30%</div>
                                     </div>
-                                    <div class="socks__price"><?php echo $viewed->get_price_html(); ?></div>
-                                    <div class="socks__discount">-30%</div>
-                                </div>
-                                <div class="socks__title"><?php echo get_the_title($viewedProdId); ?></div>
-                            </a>
-                            <?php
+                                    <div class="socks__title"><?php echo get_the_title($viewedProdId); ?></div>
+                                </a>
+                                <?php
                         endforeach;
-                            wp_reset_postdata();
+                        wp_reset_postdata();
                         ?>
                         <?php ?>
                     </div>
