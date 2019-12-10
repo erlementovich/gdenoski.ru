@@ -141,7 +141,7 @@
                                 $maleSocks->the_post();
                                 global $product;
                                 ?>
-                                <div href="<?= get_the_permalink(); ?>" class="socks__item">
+                                <a href="<?= get_the_permalink(); ?>" class="socks__item">
                                     <div class="socks__inner">
                                         <div class="socks__thumb">
                                             <?= woocommerce_get_product_thumbnail(); ?>
@@ -154,7 +154,7 @@
                                         <div class="socks__discount">-30%</div>
                                     </div>
                                     <div class="socks__title"><?= get_the_title(); ?></div>
-                                </div>
+                                </a>
                             <?php endwhile; ?>
                             <?php wp_reset_query(); ?>
                         </div>
@@ -259,7 +259,7 @@
                                 <a class="blog__item" href="<?php the_permalink(); ?>">
                                     <div class="blog__inner">
                                         <div class="blog__thumb">
-                                            <?php the_post_thumbnail(); ?>
+                                            <?php the_post_thumbnail('medium'); ?>
                                         </div>
                                         <div class="blog__title"><?php the_title(); ?></div>
                                         <div class="blog__excerpt">

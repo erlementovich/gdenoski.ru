@@ -621,11 +621,25 @@ function loadMainStyles()
     /**
      * Change WP jQuery version
      */
+//    add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+//    function my_scripts_method() {
+//        // отменяем зарегистрированный jQuery
+//        // вместо "jquery-core", можно вписать "jquery", тогда будет отменен еще и jquery-migrate
+//        wp_deregister_script( 'jquery-core' );
+//        wp_register_script( 'jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true);
+//        wp_enqueue_script( 'jquery' );
+//    }
+    
     add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
     function my_scripts_method() {
         // отменяем зарегистрированный jQuery
-        // вместо "jquery-core", можно вписать "jquery", тогда будет отменен еще и jquery-migrate
-        wp_deregister_script( 'jquery-core' );
-        wp_register_script( 'jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+        wp_deregister_script('jquery-core');
+        wp_deregister_script('jquery');
+        
+        // регистрируем
+        wp_register_script( 'jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, null, true );
+        wp_register_script( 'jquery', false, array('jquery-core'), null, true );
+        
+        // подключаем
         wp_enqueue_script( 'jquery' );
     }

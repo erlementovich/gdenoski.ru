@@ -66,3 +66,8 @@
     
         return $items;
     }
+    
+    /**
+     * Adding woocommerce image size
+     */
+    add_image_size( 'theme_wp-catalogs', 276, 276, false );
