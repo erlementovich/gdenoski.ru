@@ -103,6 +103,10 @@ table {
     border-collapse: collapse;
     width: 100%;
 }
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
 /* End common */
 
 
@@ -538,6 +542,11 @@ header.header {
 .socks__thumb img:last-child {
     left: 100%;
 }
+.tinv-wraper.tinv-wishlist {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
 .socks__price {
     position: absolute;
     bottom: 12px;
@@ -572,12 +581,6 @@ header.header {
     line-height: 1.2;
 }
 /* End section socks */
-
-/* Socks viewed КОСТЫЛЬ ПИЗДЕЦ */
-    .socks__viewed {
-
-    }
-/* End Socks viewed */
 
 
 /* Blog section */

@@ -141,21 +141,20 @@
                                 $maleSocks->the_post();
                                 global $product;
                                 ?>
-                                <a href="<?= get_the_permalink(); ?>" class="socks__item">
+                                <div href="<?= get_the_permalink(); ?>" class="socks__item">
                                     <div class="socks__inner">
                                         <div class="socks__thumb">
                                             <?= woocommerce_get_product_thumbnail(); ?>
                                             <?php
                                                 $attachment_ids = $product->get_gallery_image_ids();
-                                                $secondImage = wp_get_attachment_url($attachment_ids[0]);
+                                                echo wp_get_attachment_image($attachment_ids[0], 'medium');
                                             ?>
-                                            <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
                                         </div>
                                         <div class="socks__price"><?= $product->get_price_html(); ?></div>
                                         <div class="socks__discount">-30%</div>
                                     </div>
                                     <div class="socks__title"><?= get_the_title(); ?></div>
-                                </a>
+                                </div>
                             <?php endwhile; ?>
                             <?php wp_reset_query(); ?>
                         </div>
@@ -229,9 +228,8 @@
                                             <?= woocommerce_get_product_thumbnail(); ?>
                                             <?php
                                                 $attachment_ids = $product->get_gallery_image_ids();
-                                                $secondImage = wp_get_attachment_url($attachment_ids[0]);
+                                                echo wp_get_attachment_image($attachment_ids[0], 'medium');
                                             ?>
-                                            <img src="<?= $secondImage; ?>" alt="<?= get_the_title(); ?>">
                                         </div>
                                         <div class="socks__price"><?= $product->get_price_html(); ?></div>
                                         <div class="socks__discount">-30%</div>
@@ -295,11 +293,10 @@
                                     <div class="socks__inner">
                                         <div class="socks__thumb">
                                             <img src="<?php echo get_the_post_thumbnail_url($viewedProdId) ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
-                                        <?php
-                                            $attachment_ids = $viewed->get_gallery_image_ids();
-                                            $secondImage = wp_get_attachment_url($attachment_ids[0]);
-                                        ?>
-                                            <img src="<?php echo $secondImage; ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                            <?php
+                                                $attachment_ids = $viewed->get_gallery_image_ids();
+                                                echo wp_get_attachment_image($attachment_ids[0], 'medium');
+                                            ?>
                                         </div>
                                         <div class="socks__price"><?php echo $viewed->get_price_html(); ?></div>
                                         <div class="socks__discount">-30%</div>

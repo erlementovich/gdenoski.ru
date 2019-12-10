@@ -46,5 +46,6 @@
         </div>
     </div>
 </footer>
+<?= get_num_queries(); ?>
 </body>
 </html>

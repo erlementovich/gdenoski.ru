@@ -12,8 +12,7 @@ function wpassist_remove_block_library_css()
     /**
      *  Remove trash from wp_head: feed, shortlink
      ************************************************************************************************/
-function mw_clear_wp_head()
-{
+function mw_clear_wp_head() {
     add_filter('xmlrpc_enabled', '__return_false');
     remove_action('wp_head', 'feed_links', 2); // Удаляет ссылки RSS-лент записи и комментариев
     remove_action('wp_head', 'feed_links_extra', 3); // Удаляет ссылки RSS-лент категорий и архивов
@@ -86,19 +85,22 @@ if ('Отключаем Emojis в WordPress') {
     /** Upload SVG */
 function add_file_types_to_uploads($file_types)
 {
-    $new_filetypes        = array();
+    $new_filetypes = array();
     $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types           = array_merge($file_types, $new_filetypes);
-
+    $file_types = array_merge($file_types, $new_filetypes);
     return $file_types;
 }
-    add_action('upload_mimes', 'add_file_types_to_uploads');
+    add_filter('upload_mimes', 'add_file_types_to_uploads');
+
+
+
+
 
     /** Load styles */
     add_action('wp_enqueue_scripts', 'loadMainStyles');
 function loadMainStyles()
 {
-    wp_enqueue_style('style-name', get_stylesheet_uri());
+    wp_enqueue_style('theme-styles', get_stylesheet_uri());
     wp_enqueue_script('script-name', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true);
 }
 
@@ -603,4 +605,27 @@ function loadMainStyles()
 
             return $add_to;
         }
+    }
+    
+    
+    /**
+     * Deregister variation swatches css front
+     */
+    function custom_dequeue(){
+        wp_dequeue_style('tawcvs-frontend');
+        wp_deregister_style('tawcvs-frontend');
+    }
+    add_action('wp_enqueue_scripts', 'custom_dequeue', 9999);
+    add_action('wp_head', 'custom_dequeue', 9999);
+    
+    /**
+     * Change WP jQuery version
+     */
+    add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
+    function my_scripts_method() {
+        // отменяем зарегистрированный jQuery
+        // вместо "jquery-core", можно вписать "jquery", тогда будет отменен еще и jquery-migrate
+        wp_deregister_script( 'jquery-core' );
+        wp_register_script( 'jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js');
+        wp_enqueue_script( 'jquery' );
     }
