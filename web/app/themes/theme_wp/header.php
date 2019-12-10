@@ -9,6 +9,11 @@
  */
 
 ?>
+<?php
+    if ( is_product() ) {
+        setcookie('viewedProd[' . $post->ID . ']', $post->ID, time()+31556926, '/');
+    }
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>

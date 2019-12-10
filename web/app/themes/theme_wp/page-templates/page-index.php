@@ -276,8 +276,50 @@
                 </section>
             <?php endif; ?>
             <!--  End Blog section  -->
-
-
+            
+            
+            <!--  Watched section  -->
+            <?php if (isset($_COOKIE['viewedProd'])) : ?>
+            <section class="socks__wrap">
+                <div class="section__title title-button">
+                    <h2>Вы смотрели</h2>
+                    <a href="/magazin" class="button button-black">Все носки</a>
+                </div>
+                <div class="socks__wrap-mobile">
+                    <div class="socks__wrap-mobileinner">
+                        <?php
+                        foreach ($_COOKIE['viewedProd'] as $viewedProdId):
+                            $viewed = wc_get_product( $viewedProdId );
+//                                echo '<pre>';
+//                                var_dump($viewed);
+//                                echo '</pre>';
+                            ?>
+                            <a href="<?php echo get_the_permalink($viewedProdId); ?>" class="socks__item">
+                                <div class="socks__inner">
+                                    <div class="socks__thumb">
+                                        <img src="<?php echo get_the_post_thumbnail_url($viewedProdId) ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                        <?php
+                                            $attachment_ids = $viewed->get_gallery_image_ids();
+                                            $secondImage = wp_get_attachment_url($attachment_ids[0]);
+                                        ?>
+                                        <img src="<?php echo $secondImage; ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                    </div>
+                                    <div class="socks__price"><?php echo $viewed->get_price_html(); ?></div>
+                                    <div class="socks__discount">-30%</div>
+                                </div>
+                                <div class="socks__title"><?php echo get_the_title($viewedProdId); ?></div>
+                            </a>
+                            <?php
+                        endforeach;
+                            wp_reset_postdata();
+                        ?>
+                        <?php ?>
+                    </div>
+                </div>
+            </section>
+            <?php endif; ?>
+            <!--  Watched section  -->
+            
         </div>
     </div>
 </main>
