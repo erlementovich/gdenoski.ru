@@ -290,9 +290,6 @@
                         <?php
                         foreach ($_COOKIE['viewedProd'] as $viewedProdId):
                             $viewed = wc_get_product( $viewedProdId );
-//                                echo '<pre>';
-//                                var_dump($viewed);
-//                                echo '</pre>';
                             ?>
                             <a href="<?php echo get_the_permalink($viewedProdId); ?>" class="socks__item">
                                 <div class="socks__inner">
