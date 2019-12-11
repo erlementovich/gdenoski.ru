@@ -139,7 +139,6 @@
                         <div class="socks__wrap-mobileinner">
                             <?php while ($maleSocks->have_posts()) :
                                 $maleSocks->the_post();
-                                global $product;
                                 ?>
                                 <a href="<?= get_the_permalink(); ?>" class="socks__item">
                                     <div class="socks__inner">
@@ -220,7 +219,6 @@
                         <div class="socks__wrap-mobileinner">
                             <?php while ($femaleSocks->have_posts()) :
                                 $femaleSocks->the_post();
-                                global $product;
                                 ?>
                                 <a href="<?= get_the_permalink(); ?>" class="socks__item">
                                     <div class="socks__inner">
@@ -289,19 +287,19 @@
                         foreach ($_COOKIE['viewedProd'] as $viewedProdId) :
                             $viewed = wc_get_product($viewedProdId);
                             ?>
-                                <a href="<?php echo get_the_permalink($viewedProdId); ?>" class="socks__item">
+                                <a href="<?= get_the_permalink($viewedProdId); ?>" class="socks__item">
                                     <div class="socks__inner">
                                         <div class="socks__thumb">
-                                            <img src="<?php echo get_the_post_thumbnail_url($viewedProdId) ?>" alt="<?php echo get_the_title($viewedProdId); ?>">
+                                            <img src="<?= get_the_post_thumbnail_url($viewedProdId) ?>" alt="<?= get_the_title($viewedProdId); ?>">
                                             <?php
                                                 $attachment_ids = $viewed->get_gallery_image_ids();
                                                 echo wp_get_attachment_image($attachment_ids[0], 'medium');
                                             ?>
                                         </div>
-                                        <div class="socks__price"><?php echo $viewed->get_price_html(); ?></div>
+                                        <div class="socks__price"><?= $viewed->get_price_html(); ?></div>
                                         <div class="socks__discount">-30%</div>
                                     </div>
-                                    <div class="socks__title"><?php echo get_the_title($viewedProdId); ?></div>
+                                    <div class="socks__title"><?= get_the_title($viewedProdId); ?></div>
                                 </a>
                                 <?php
                         endforeach;

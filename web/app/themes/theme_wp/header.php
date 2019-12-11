@@ -45,7 +45,7 @@ if (is_product()) {
         <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <?php endif; ?>
 </head>
-<body class="post-<?= get_the_ID(); ?> <?php if (is_account_page()) {
+<body class="post-<?php the_ID(); ?> <?php if (is_account_page()) {
     echo 'account';
                   } ?>">
 <header class="header">
