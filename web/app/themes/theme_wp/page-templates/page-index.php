@@ -14,7 +14,6 @@
         'orderby'        => 'date',
         'order'          => 'DESC',
         'product_cat'    => 'muzhskie-noski',
-//        'cache_results' => false
     ]);
     $femaleSocks = new WP_Query([
         'post_type'      => 'product',
@@ -22,14 +21,12 @@
         'orderby'        => 'date',
         'order'          => 'DESC',
         'product_cat'    => 'zhenskie-noski',
-//        'cache_results' => false
     ]);
     $blogPosts = get_posts([
-       'post_type'       => 'post',
+        'post_type'       => 'post',
         'posts_per_page' => 4,
         'orderby'        => 'date',
         'order'          => 'DESC',
-       //'cache_results' => false
     ]);
     ?>
 
