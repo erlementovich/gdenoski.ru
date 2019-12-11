@@ -8,19 +8,17 @@
 <?php get_header(); ?>
 
 <?php
-    $maleSocks = new WP_Query([
-        'post_type'      => 'product',
-        'posts_per_page' => 8,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-        'product_cat'    => 'muzhskie-noski',
+    $maleSocks = wc_get_products([
+        'limit'     => 8,
+        'orderby'   => 'date',
+        'category'  => [
+            'muzhskie-noski'],
     ]);
-    $femaleSocks = new WP_Query([
-        'post_type'      => 'product',
-        'posts_per_page' => 8,
-        'orderby'        => 'date',
-        'order'          => 'DESC',
-        'product_cat'    => 'zhenskie-noski',
+    $femaleSocks = wc_get_products([
+        'limit'     => 8,
+        'orderby'   => 'date',
+        'category'  => [
+            'zhenskie-noski'],
     ]);
     $blogPosts = get_posts([
         'post_type'       => 'post',
@@ -28,8 +26,8 @@
         'orderby'        => 'date',
         'order'          => 'DESC',
     ]);
-    ?>
-
+    
+?>
 <main>
     <div class="container">
         <div class="page__title front__title title-button">
@@ -137,25 +135,23 @@
                     </div>
                     <div class="socks__wrap-mobile">
                         <div class="socks__wrap-mobileinner">
-                            <?php while ($maleSocks->have_posts()) :
-                                $maleSocks->the_post();
-                                ?>
-                                <a href="<?= get_the_permalink(); ?>" class="socks__item">
+                            <?php foreach ($maleSocks as $sock) : ?>
+                                <a href="<?= $sock->get_permalink(); ?>" class="socks__item">
                                     <div class="socks__inner">
                                         <div class="socks__thumb">
-                                            <?= woocommerce_get_product_thumbnail(); ?>
+                                            <?= $sock->get_image(); ?>
                                             <?php
-                                                $attachment_ids = $product->get_gallery_image_ids();
+                                                $attachment_ids = $sock->get_gallery_image_ids();
                                                 echo wp_get_attachment_image($attachment_ids[0], 'medium');
                                             ?>
                                         </div>
-                                        <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                        <div class="socks__price"><?= $sock->get_price_html(); ?></div>
                                         <div class="socks__discount">-30%</div>
                                     </div>
-                                    <div class="socks__title"><?= get_the_title(); ?></div>
+                                    <div class="socks__title"><?= $sock->get_title(); ?></div>
                                 </a>
-                            <?php endwhile; ?>
-                            <?php wp_reset_query(); ?>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </section>
@@ -217,25 +213,23 @@
                     </div>
                     <div class="socks__wrap-mobile">
                         <div class="socks__wrap-mobileinner">
-                            <?php while ($femaleSocks->have_posts()) :
-                                $femaleSocks->the_post();
-                                ?>
-                                <a href="<?= get_the_permalink(); ?>" class="socks__item">
+                            <?php foreach ($femaleSocks as $sock) : ?>
+                                <a href="<?= $sock->get_permalink(); ?>" class="socks__item">
                                     <div class="socks__inner">
                                         <div class="socks__thumb">
-                                            <?= woocommerce_get_product_thumbnail(); ?>
+                                            <?= $sock->get_image(); ?>
                                             <?php
-                                                $attachment_ids = $product->get_gallery_image_ids();
+                                                $attachment_ids = $sock->get_gallery_image_ids();
                                                 echo wp_get_attachment_image($attachment_ids[0], 'medium');
                                             ?>
                                         </div>
-                                        <div class="socks__price"><?= $product->get_price_html(); ?></div>
+                                        <div class="socks__price"><?= $sock->get_price_html(); ?></div>
                                         <div class="socks__discount">-30%</div>
                                     </div>
-                                    <div class="socks__title"><?= get_the_title(); ?></div>
+                                    <div class="socks__title"><?= $sock->get_title(); ?></div>
                                 </a>
-                            <?php endwhile; ?>
-                            <?php wp_reset_query(); ?>
+                            <?php endforeach; ?>
+                            <?php wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </section>
