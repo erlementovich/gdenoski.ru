@@ -1,4 +1,10 @@
 <?php
+    
+    /**
+     * Add theme title support
+     */
+    add_theme_support( 'title-tag' );
+    
     /** Remove Gutenberg styles */
 function wpassist_remove_block_library_css()
 {
