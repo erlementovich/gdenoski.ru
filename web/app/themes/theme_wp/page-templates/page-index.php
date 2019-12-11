@@ -13,20 +13,23 @@
         'posts_per_page' => 8,
         'orderby'        => 'date',
         'order'          => 'DESC',
-        'product_cat'    => 'muzhskie-noski'
+        'product_cat'    => 'muzhskie-noski',
+//        'cache_results' => false
     ]);
     $femaleSocks = new WP_Query([
         'post_type'      => 'product',
         'posts_per_page' => 8,
         'orderby'        => 'date',
         'order'          => 'DESC',
-        'product_cat'    => 'zhenskie-noski'
+        'product_cat'    => 'zhenskie-noski',
+//        'cache_results' => false
     ]);
     $blogPosts = get_posts([
        'post_type'       => 'post',
         'posts_per_page' => 4,
         'orderby'        => 'date',
-        'order'          => 'DESC'
+        'order'          => 'DESC',
+       //'cache_results' => false
     ]);
     ?>
 

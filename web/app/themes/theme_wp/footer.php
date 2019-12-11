@@ -14,14 +14,56 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <?php get_template_part('template-parts/forms/subscribe-form'); ?>
+                <div class="subscribe">
+                    <div class="subscribe__title">Подпишитесь на акции и специальные предложения</div>
+                    <form class="subscribe__form" method="POST">
+                        <input type="email" name="subscribe__email" placeholder="Электронная почта" class="input__email">
+                        <input type="submit" value="Подписаться" class="button-submit">
+                    </form>
+                </div>
             </div>
         </div>
         <div class="row footer__columns">
-            <?php get_template_part('/template-parts/footer/footer', '1') ?>
-            <?php get_template_part('/template-parts/footer/footer', '2') ?>
-            <?php get_template_part('/template-parts/footer/footer', '3') ?>
-            <?php get_template_part('/template-parts/footer/footer', '4') ?>
+            <div class="col-3">
+                <div class="footer__coltitle">Где носки</div>
+                <div class="footer__column">
+                    <ul>
+                        <li><a href="#">Отследить заказ</a></li>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Помощь</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="footer__coltitle">Магазин носков</div>
+                <div class="footer__column">
+                    <ul>
+                        <li><a href="#">Мужские носки</a></li>
+                        <li><a href="#">Женские носки</a></li>
+                        <li><a href="#">Детские носки</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="footer__coltitle">Оптовые продажи</div>
+                <div class="footer__column">
+                    <ul>
+                        <li><a href="#">Носки оптом</a></li>
+                        <li><a href="#">Носки на заказ</a></li>
+                        <li><a href="#">Конструктор заказа носков</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="footer__coltitle">Заголовок</div>
+                <div class="footer__column">
+                    <ul>
+                        <li><a href="#">Пункт</a></li>
+                        <li><a href="#">Пункт</a></li>
+                        <li><a href="#">Пункт</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="footer__bottom">
             <p>Обращаем внимание, что сайт "gdenoski.ru" по продаже носков, колготок и чулок носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 (2) ГК РФ.</p>

@@ -26,29 +26,25 @@ if (is_product()) {
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <!--  Default trash  -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/images/favicon.png" type="image/x-icon">
-    <!--  End default trash  -->
 
     <title><?php wp_title('|', true, 'right'); ?></title>
     <?php wp_head(); ?>
-
-    <!-- OpenGraph -->
+    
     <meta property="og:title" content="Где носки" />
     <meta property="og:description" content="Купить носки оптом и в розницу" />
     <meta property="og:url" content="https://www.gdenoski.ru/" />
     <meta property="og:image" content="" />
-    <!-- End OpenGraph -->
 
-    <!--  Temp Swiper  -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-
-    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <!--  End Temp Swiper  -->
+    <?php if ( is_front_page() ): ?>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    
+        <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <?php endif; ?>
 </head>
 <body class="post-<?= get_the_ID(); ?> <?php if (is_account_page()) {
     echo 'account';
@@ -57,7 +53,9 @@ if (is_product()) {
     <div class="header__inner container">
         <div class="header__top">
             <div class="header__logo">
-                <?php get_template_part('/template-parts/elements/logo'); ?>
+                <a href="/">
+                    <img src="/app/uploads/2019/11/noski_logo.svg" alt="Где носки логотип">
+                </a>
             </div>
             <div class="header__search">
                 <?php get_search_form(); ?>
@@ -66,6 +64,19 @@ if (is_product()) {
                 <a href="#" class="button button-transparent">Войти</a>
             </div>
         </div>
-        <?php get_template_part('/template-parts/menu'); ?>
+        <div class="header__bottom">
+            <?php
+                wp_nav_menu([
+                    'menu'            => 'HeaderMenu',
+                    'container'       => 'nav',
+                    'container_class' => 'header__menu',
+                    'container_id'    => 'navbar',
+                    'items_wrap'      => '<ul>%3$s</ul>',
+                    'menu_id'         => '',
+                    'fallback_cb'     => 'wp_page_menu',
+                    'theme_location'  => 'top'
+                ]);
+            ?>
+        </div>
     </div>
 </header>
