@@ -17,7 +17,7 @@
             <h1>Блог</h1>
             <?php if( function_exists('kama_breadcrumbs') ) kama_breadcrumbs(); ?>
         </div>
-        <section class="blog__wrap">
+        <section class="blog__wrap blog__archive">
             <?php if ( $posts ) : ?>
                 <?php foreach ( $posts as $post ) : ?>
                     <?php setup_postdata( $post ); ?>

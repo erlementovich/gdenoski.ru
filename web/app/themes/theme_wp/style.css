@@ -638,6 +638,21 @@ header.header {
 }
 /* End blog section */
 
+/* Blog */
+.blog__archive {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.blog__archive>.blog__item {
+    margin-right: 2.66666667%;
+}
+.blog__archive>.blog__item:last-child,
+.blog__archive>.blog__item:nth-child(4n+4){
+    margin-right: 0;
+}
+/* End blog */
+
 
 /* Front page */
 .page__title {
@@ -1604,6 +1619,16 @@ footer {
         }
         .bill__top {
             opacity: 1;
+        }
+
+        /* Blog page */
+        .blog__archive {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .blog__archive>.blog__item {
+            flex-basis: 100%;
+            margin-right: 0;
         }
 
         /* Afisha section */
