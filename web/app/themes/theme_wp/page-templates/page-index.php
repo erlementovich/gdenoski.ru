@@ -58,7 +58,7 @@
                         <a class="swiper-slide" href="#">
                             <div class="bill__inner">
                                 <div class="bill__bg">
-                                    <video loop muted>
+                                    <video loop muted preload="metadata">
                                         <source src="/app/uploads/2019/11/allj.mp4" type="video/mp4" poster="/app/uploads/2019/11/allj.png">
                                     </video>
                                 </div>
@@ -72,7 +72,7 @@
                         <a class="swiper-slide" href="#">
                             <div class="bill__inner">
                                 <div class="bill__bg">
-                                    <video loop muted>
+                                    <video loop muted preload="metadata">
                                         <source src="/app/uploads/2019/11/allj.mp4" type="video/mp4" poster="/app/uploads/2019/11/allj.png">
                                     </video>
                                 </div>
