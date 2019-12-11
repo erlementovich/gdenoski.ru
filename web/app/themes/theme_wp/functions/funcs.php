@@ -3,13 +3,24 @@
     /**
      * Add theme title support
      */
-    add_theme_support( 'title-tag' );
+    add_theme_support('title-tag');
+    
+    
+    /**
+     * Remove JS type=text
+     */
+    add_action(
+        'after_setup_theme',
+        function () {
+            add_theme_support('html5', [ 'script', 'style' ]);
+        }
+    );
     
     /** Remove Gutenberg styles */
-function wpassist_remove_block_library_css()
-{
-    wp_dequeue_style('wp-block-library');
-}
+    function wpassist_remove_block_library_css()
+    {
+        wp_dequeue_style('wp-block-library');
+    }
     add_action('wp_enqueue_scripts', 'wpassist_remove_block_library_css');
 
     /** Disable Gutenberg */
@@ -18,84 +29,85 @@ function wpassist_remove_block_library_css()
     /**
      *  Remove trash from wp_head: feed, shortlink
      ************************************************************************************************/
-function mw_clear_wp_head() {
-    add_filter('xmlrpc_enabled', '__return_false');
-    remove_action('wp_head', 'feed_links', 2); // Удаляет ссылки RSS-лент записи и комментариев
-    remove_action('wp_head', 'feed_links_extra', 3); // Удаляет ссылки RSS-лент категорий и архивов
+    function mw_clear_wp_head()
+    {
+        add_filter('xmlrpc_enabled', '__return_false');
+        remove_action('wp_head', 'feed_links', 2); // Удаляет ссылки RSS-лент записи и комментариев
+        remove_action('wp_head', 'feed_links_extra', 3); // Удаляет ссылки RSS-лент категорий и архивов
 
-    remove_action('wp_head', 'rsd_link'); // Удаляет RSD ссылку для удаленной публикации
-    remove_action('wp_head', 'wlwmanifest_link'); // Удаляет ссылку Windows для Live Writer
-    remove_action('wp_head', 'wp_generator'); // Удаляет версию WordPress
+        remove_action('wp_head', 'rsd_link'); // Удаляет RSD ссылку для удаленной публикации
+        remove_action('wp_head', 'wlwmanifest_link'); // Удаляет ссылку Windows для Live Writer
+        remove_action('wp_head', 'wp_generator'); // Удаляет версию WordPress
 
-    remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0); // Удаляет короткую ссылку
-    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); // Удаляет ссылки на предыдущую и следующую статьи
-}
+        remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0); // Удаляет короткую ссылку
+        remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); // Удаляет ссылки на предыдущую и следующую статьи
+    }
     add_action('wp_head', 'mw_clear_wp_head', 1);
 
     /** Remove emoji */
-if ('Отключаем Emojis в WordPress') {
-    /**
-     * Disable the emoji's
-     */
-    function disable_emojis()
-    {
-        remove_action('wp_head', 'print_emoji_detection_script', 7);
-        remove_action('admin_print_scripts', 'print_emoji_detection_script');
-        remove_action('wp_print_styles', 'print_emoji_styles');
-        remove_action('admin_print_styles', 'print_emoji_styles');
-        remove_filter('the_content_feed', 'wp_staticize_emoji');
-        remove_filter('comment_text_rss', 'wp_staticize_emoji');
-        remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-        add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
-        add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
-    }
-    add_action('init', 'disable_emojis');
+    if ('Отключаем Emojis в WordPress') {
+        /**
+         * Disable the emoji's
+         */
+        function disable_emojis()
+        {
+            remove_action('wp_head', 'print_emoji_detection_script', 7);
+            remove_action('admin_print_scripts', 'print_emoji_detection_script');
+            remove_action('wp_print_styles', 'print_emoji_styles');
+            remove_action('admin_print_styles', 'print_emoji_styles');
+            remove_filter('the_content_feed', 'wp_staticize_emoji');
+            remove_filter('comment_text_rss', 'wp_staticize_emoji');
+            remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+            add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
+            add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
+        }
+        add_action('init', 'disable_emojis');
 
-    /**
-     * Filter function used to remove the tinymce emoji plugin.
-     *
-     * @param    array  $plugins
-     * @return   array             Difference betwen the two arrays
-     */
-    function disable_emojis_tinymce($plugins)
-    {
-        if (is_array($plugins)) {
-            return array_diff($plugins, array( 'wpemoji' ));
+        /**
+         * Filter function used to remove the tinymce emoji plugin.
+         *
+         * @param    array  $plugins
+         * @return   array             Difference betwen the two arrays
+         */
+        function disable_emojis_tinymce($plugins)
+        {
+            if (is_array($plugins)) {
+                return array_diff($plugins, array( 'wpemoji' ));
+            }
+
+            return array();
         }
 
-        return array();
-    }
-
-    /**
-     * Remove emoji CDN hostname from DNS prefetching hints.
-     *
-     * @param  array  $urls          URLs to print for resource hints.
-     * @param  string $relation_type The relation type the URLs are printed for.
-     * @return array                 Difference betwen the two arrays.
-     */
-    function disable_emojis_remove_dns_prefetch($urls, $relation_type)
-    {
-        if ('dns-prefetch' == $relation_type) {
-            // Strip out any URLs referencing the WordPress.org emoji location
-            $emoji_svg_url_bit = 'https://s.w.org/images/core/emoji/';
-            foreach ($urls as $key => $url) {
-                if (strpos($url, $emoji_svg_url_bit) !== false) {
-                    unset($urls[$key]);
+        /**
+         * Remove emoji CDN hostname from DNS prefetching hints.
+         *
+         * @param  array  $urls          URLs to print for resource hints.
+         * @param  string $relation_type The relation type the URLs are printed for.
+         * @return array                 Difference betwen the two arrays.
+         */
+        function disable_emojis_remove_dns_prefetch($urls, $relation_type)
+        {
+            if ('dns-prefetch' == $relation_type) {
+                // Strip out any URLs referencing the WordPress.org emoji location
+                $emoji_svg_url_bit = 'https://s.w.org/images/core/emoji/';
+                foreach ($urls as $key => $url) {
+                    if (strpos($url, $emoji_svg_url_bit) !== false) {
+                        unset($urls[$key]);
+                    }
                 }
             }
+            return $urls;
         }
-        return $urls;
     }
-}
 
     /** Upload SVG */
-function add_file_types_to_uploads($file_types)
-{
-    $new_filetypes = array();
-    $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes);
-    return $file_types;
-}
+    function add_file_types_to_uploads($file_types)
+    {
+        $new_filetypes = array();
+        $new_filetypes['svg'] = 'image/svg+xml';
+        $file_types = array_merge($file_types, $new_filetypes);
+        return $file_types;
+    }
     add_filter('upload_mimes', 'add_file_types_to_uploads');
 
 
@@ -104,11 +116,11 @@ function add_file_types_to_uploads($file_types)
 
     /** Load styles */
     add_action('wp_enqueue_scripts', 'loadMainStyles');
-function loadMainStyles()
-{
-    wp_enqueue_style('theme-styles', get_stylesheet_uri());
-    wp_enqueue_script('script-name', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true);
-}
+    function loadMainStyles()
+    {
+        wp_enqueue_style('theme-styles', get_stylesheet_uri());
+        wp_enqueue_script('script-name', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true);
+    }
 
     /** Disable wp-embed.js */
     remove_action('wp_head', 'wp_oembed_add_discovery_links');
@@ -617,7 +629,8 @@ function loadMainStyles()
     /**
      * Deregister variation swatches css front
      */
-    function custom_dequeue(){
+    function custom_dequeue()
+    {
         wp_dequeue_style('tawcvs-frontend');
         wp_deregister_style('tawcvs-frontend');
     }
@@ -636,16 +649,17 @@ function loadMainStyles()
 //        wp_enqueue_script( 'jquery' );
 //    }
     
-    add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
-    function my_scripts_method() {
+    add_action('wp_enqueue_scripts', 'my_scripts_method');
+    function my_scripts_method()
+    {
         // отменяем зарегистрированный jQuery
         wp_deregister_script('jquery-core');
         wp_deregister_script('jquery');
         
         // регистрируем
-        wp_register_script( 'jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, null, true );
-        wp_register_script( 'jquery', false, array('jquery-core'), null, true );
+        wp_register_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', false, null, true);
+        wp_register_script('jquery', false, array('jquery-core'), null, true);
         
         // подключаем
-        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script('jquery');
     }
