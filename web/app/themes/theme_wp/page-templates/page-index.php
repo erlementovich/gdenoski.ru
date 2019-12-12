@@ -146,7 +146,9 @@
                                             ?>
                                         </div>
                                         <div class="socks__price"><?= $sock->get_price_html(); ?></div>
-                                        <div class="socks__discount">-30%</div>
+                                        <?php if ( $sock->get_meta( '_number_field', true ) ): ?>
+                                            <div class="socks__discount">-<?php echo $sock->get_meta( '_number_field', true ); ?>%</div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="socks__title"><?= $sock->get_title(); ?></div>
                                 </a>
@@ -224,7 +226,9 @@
                                             ?>
                                         </div>
                                         <div class="socks__price"><?= $sock->get_price_html(); ?></div>
-                                        <div class="socks__discount">-30%</div>
+                                        <?php if ( $sock->get_meta( '_number_field', true ) ): ?>
+                                            <div class="socks__discount">-<?php echo $sock->get_meta( '_number_field', true ); ?>%</div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="socks__title"><?= $sock->get_title(); ?></div>
                                 </a>
@@ -291,7 +295,9 @@
                                             ?>
                                         </div>
                                         <div class="socks__price"><?= $viewed->get_price_html(); ?></div>
-                                        <div class="socks__discount">-30%</div>
+                                        <?php if ( $viewed->get_meta( '_number_field', true ) ): ?>
+                                            <div class="socks__discount">-<?php echo $viewed->get_meta( '_number_field', true ); ?>%</div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="socks__title"><?= get_the_title($viewedProdId); ?></div>
                                 </a>
