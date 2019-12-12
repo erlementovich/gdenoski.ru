@@ -5,6 +5,17 @@
      */
     add_theme_support('title-tag');
     
+    /**
+     * Remove Image Sizes
+     */
+    add_action( 'after_setup_theme', 'remove_plugin_image_sizes', 999 );
+    function remove_plugin_image_sizes(){
+        remove_image_size( '1536x1536' );
+        remove_image_size( '2048x2048' );
+        remove_image_size( 'shop_single' );
+        remove_image_size( 'theme_wp-catalogs' );
+    }
+    
     
     /**
      * Remove JS type=text
