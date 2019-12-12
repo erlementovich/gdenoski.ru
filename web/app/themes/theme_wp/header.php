@@ -36,14 +36,7 @@ if (is_product()) {
     <meta property="og:description" content="Купить носки оптом и в розницу" />
     <meta property="og:url" content="https://www.gdenoski.ru/" />
     <meta property="og:image" content="" />
-
-    <?php if ( is_front_page() ): ?>
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     
-        <script src="https://unpkg.com/swiper/js/swiper.js"></script>
-        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
-    <?php endif; ?>
 </head>
 <body class="post-<?php the_ID(); ?> <?php if (is_account_page()) {
     echo 'account';
