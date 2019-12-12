@@ -31,6 +31,10 @@ if (is_product()) {
     <link rel="shortcut icon" href="<?= get_template_directory_uri() ?>/images/favicon.png" type="image/x-icon">
     
     <?php wp_head(); ?>
+    <?php if ( is_front_page() ): ?>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <?php endif; ?>
     
     <meta property="og:title" content="Где носки" />
     <meta property="og:description" content="Купить носки оптом и в розницу" />

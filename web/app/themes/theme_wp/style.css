@@ -896,7 +896,7 @@ header.header {
 .woocommerce-loop-product__title {
     font-weight: 700;
     font-size: 18px;
-    margin-top: 16px;
+    padding-top: 16px;
     line-height: 1.2;
 }
 /* End woocommerce listing */
@@ -1597,6 +1597,9 @@ footer {
             margin-left: 0;
             margin-top: 15px;
         }
+        .page__title .kama_breadcrumbs, .page__title .woocommerce-breadcrumb {
+            padding-left: 0;
+        }
 
         /* Front slider */
         .slider__wrap {
@@ -1701,16 +1704,29 @@ footer {
         .blog__wrap-inner>.blog__item:first-child {
             margin-left: 15px;
         }
-        .blog__wrap-inner>.blog__item:last-child,
-        .socks__wrap-mobileinner>.socks__item:last-child {
-            /*margin-right: 0;*/
-        }
         .socks__wrap-mobileinner {
             justify-content: space-between;
         }
         .blog__wrap-inner>.blog__item:not(:nth-child(4n+4)),
         .socks__wrap-mobileinner>.socks__item:not(:nth-child(4n+4)) {
             margin-right: 15px;
+        }
+
+        /* Shop page */
+        .products.columns-4 .socks__thumb {
+            height: 326px;
+        }
+        .products.columns-4 .socks__thumb img {
+            width: 100%;
+        }
+        .woocommerce-loop-product__title {
+            padding-top: 10px;
+        }
+        .woocommerce-pagination li .page-numbers {
+            margin-bottom: 10px;
+        }
+        .wootop .woocommerce-ordering {
+            margin-top: 15px;
         }
 
         /* Footer */
@@ -1765,6 +1781,22 @@ footer {
             padding-left: 15px;
             padding-right: 15px;
         }
+
+        /* Socks single */
+        .socks__single {
+            display: block;
+        }
+        .socks__single .woocommerce-product-gallery {
+            display: block;
+            width: auto;
+            max-width: 100%;
+        }
+        .socks__single .wp-post-image,
+        .woocommerce-product-gallery__image a>img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
         .socks__single .woocommerce-product-gallery {
             padding-left: 15px;
             padding-right: 15px;
@@ -1774,8 +1806,18 @@ footer {
             flex-basis: auto;
         }
         .flex-control-nav.flex-control-thumbs {
-            flex-basis: auto;
+            margin-top: 5px;
+            display: flex;
+            flex-flow: wrap;
+            justify-content: flex-start;
             order: 2;
+        }
+        .flex-control-nav.flex-control-thumbs li {
+            width: 23%;
+            margin-right: 2.66666667%;
+        }
+        .flex-control-nav.flex-control-thumbs li:last-child {
+            margin-right: 0;
         }
         .socks__single .summary.entry-summary {
             width: auto;
