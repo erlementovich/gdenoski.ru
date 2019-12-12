@@ -48,6 +48,9 @@ input[type=number]::-webkit-outer-spin-button {
 p, span, input, label, a {
     font-size: 14px;
 }
+.woocommerce label {
+    pointer-events: none;
+}
 h1 {
     font-size: 34px;
     font-weight: 700;
@@ -1725,8 +1728,12 @@ footer {
         .woocommerce-pagination li .page-numbers {
             margin-bottom: 10px;
         }
+        .wootop {
+            margin-top: 0;
+        }
         .wootop .woocommerce-ordering {
             margin-top: 15px;
+            width: 100%;
         }
 
         /* Footer */

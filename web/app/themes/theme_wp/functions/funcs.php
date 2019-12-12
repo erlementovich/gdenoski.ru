@@ -129,7 +129,7 @@
     add_action('wp_enqueue_scripts', 'loadMainStyles');
     function loadMainStyles()
     {
-        wp_enqueue_style('theme-styles', get_stylesheet_uri());
+        wp_enqueue_style('theme-styles', get_stylesheet_uri(), [], '1.0.1');
         wp_enqueue_script('script-name', get_template_directory_uri() . '/js/script.js', array(), '1.0.0', true);
     }
 
@@ -651,15 +651,6 @@
     /**
      * Change WP jQuery version
      */
-//    add_action( 'wp_enqueue_scripts', 'my_scripts_method' );
-//    function my_scripts_method() {
-//        // отменяем зарегистрированный jQuery
-//        // вместо "jquery-core", можно вписать "jquery", тогда будет отменен еще и jquery-migrate
-//        wp_deregister_script( 'jquery-core' );
-//        wp_register_script( 'jquery-core', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', true);
-//        wp_enqueue_script( 'jquery' );
-//    }
-    
     add_action('wp_enqueue_scripts', 'my_scripts_method');
     function my_scripts_method()
     {
