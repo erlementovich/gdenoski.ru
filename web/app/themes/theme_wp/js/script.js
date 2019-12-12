@@ -1,38 +1,4 @@
 /**
- * Init slider
- */
-
-var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    loop: true,
-    lazy: {
-        loadPrevNext: true,
-    },
-    speed: 600,
-    navigation: {
-        prevEl: '.bill__swipe-prev',
-        nextEl: '.bill__swipe-next'
-    },
-    slideToClickedSlide: true,
-    on: {
-        slideChange: function () {
-            jQuery(function ($) {
-                let $curSlide = $('[data-swiper-slide-index="' + swiper.realIndex + '"]');
-                $curSlide.find('video').each(function () {
-                    this.play();
-                });
-
-                var prevIn = parseInt(swiper.previousIndex-6);
-                let $prevSlide = $('[data-swiper-slide-index="' + prevIn + '"]');
-                $prevSlide.find('video').each(function () {
-                    this.pause();
-                });
-            });
-        }
-    }
-});
-/**
  * Sticky header
  */
 // When the user scrolls the page, execute myFunction
