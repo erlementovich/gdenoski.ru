@@ -167,7 +167,7 @@ header.header {
     width: 20%;
 }
 .header__logo img {
-    width: 200px;
+    width: 150px;
 }
 .header__search {
     width: 33.4%;
@@ -1555,6 +1555,13 @@ footer {
 /* End footer */
 
 
+/* Header mobile */
+.header__swipe {
+    position: absolute;
+    visibility: hidden;
+}
+/* End Header Mobile */
+
 /* Media Queries */
     @media screen and (min-width: 768px) and (max-width: 1023px) {
     }
@@ -1573,17 +1580,17 @@ footer {
         .header__logo {
             width: 200px;
         }
-        .header__search {
+        .header__search,
+        .header__panel,
+        .header__bottom {
             display: none;
+        }
+        .header__top #s:invalid ~ .search__placeholder {
+            visibility: hidden;
         }
         .header__panel {
             width: auto;
             top: -4px;
-        }
-        .header__bottom {
-            padding-left: 15px;
-            padding-right: 15px;
-            display: none;
         }
         /* Titles */
         .section__title,
@@ -1840,6 +1847,72 @@ footer {
             width: auto;
             padding-left: 15px;
             padding-right: 15px;
+            margin-top: 10px;
+        }
+        .socks__single .product_title.entry-title {
+            margin-top: 5px;
+        }
+
+        /* Cart Page */
+        .woocart__form {
+            max-width: 100%;
+            overflow-x: scroll;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .woocart__inner {
+            width: max-content;
+        }
+        .cart-collaterals {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        /* Checkout Page */
+        .woocommerce-form-coupon-toggle,
+        .checkout_coupon.woocommerce-form-coupon {
+            width: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .checkout.woocommerce-checkout {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .checkout.woocommerce-checkout .col2-set {
+            float: none;
+            width: 100%;
+            padding-right: 0;
+        }
+        .checkout.woocommerce-checkout #order_review_heading {
+            float: none;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 0;
+        }
+        .checkout.woocommerce-checkout #order_review {
+            float: none;
+            width: auto;
+            padding: 15px;
+        }
+
+        /* Account Page */
+        .account .woocommerce {
+            display: block;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .account__navigation {
+            width: 100%;
+            padding-bottom: 25px;
+        }
+        .account__content {
+            width: 100%;
         }
     }
+@media screen and (min-width: 1024px) {
+    .header__mobile {
+        display: none;
+    }
+}
 /* End media queries */

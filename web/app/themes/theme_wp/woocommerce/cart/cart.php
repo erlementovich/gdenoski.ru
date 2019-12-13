@@ -20,6 +20,7 @@ defined('ABSPATH') || exit;
 do_action('woocommerce_before_cart'); ?>
 
 <form class="woocart__form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
+    <div class="woocart__inner">
     <?php do_action('woocommerce_before_cart_table'); ?>
 
     <table cellspacing="0">
@@ -158,6 +159,7 @@ do_action('woocommerce_before_cart'); ?>
         </tbody>
     </table>
     <?php do_action('woocommerce_after_cart_table'); ?>
+    </div>
 </form>
 
 <?php do_action('woocommerce_before_cart_collaterals'); ?>
