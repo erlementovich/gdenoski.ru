@@ -75,31 +75,39 @@ if (is_product()) {
             ?>
         </div>
         <div class="header__mobile">
-            <div class="hamburger"></div>
-            <div class="header__swipe">
-                <div class="swipe__menu">
-                    <?php
-                        wp_nav_menu([
-                            'menu'            => 'HeaderMenu',
-                            'container'       => 'nav',
-                            'container_class' => 'header__menu',
-                            'container_id'    => 'navbar',
-                            'items_wrap'      => '<ul>%3$s</ul>',
-                            'menu_id'         => '',
-                            'fallback_cb'     => 'wp_page_menu',
-                            'theme_location'  => 'top'
-                        ]);
-                    ?>
+            <div class="header__mobile-inner">
+                <div class="mobile__logo">
+                    <a href="/">
+                        <img src="/app/uploads/2019/12/noski_logo.svg" alt="Где носки логотип">
+                    </a>
                 </div>
-                <div class="swipe__bottom">
-                    <div class="swipe__search">
-                        <?php get_search_form(); ?>
-                    </div>
-                    <div class="swipe__in">
-                        <a href="#" class="button button-transparent">Войти</a>
-                    </div>
-                </div>
+                <div class="hamburger"><span></span><span></span><span></span></div>
             </div>
         </div>
     </div>
 </header>
+<div class="bgshadow"></div>
+<div class="header__swipe">
+    <div class="swipe__search">
+        <?php get_search_form(); ?>
+    </div>
+    <div class="swipe__menu">
+        <?php
+            wp_nav_menu([
+                'menu'            => 'HeaderMenu',
+                'container'       => 'nav',
+                'container_class' => 'mobile__menu',
+                'container_id'    => 'navbar',
+                'items_wrap'      => '<ul>%3$s</ul>',
+                'menu_id'         => '',
+                'fallback_cb'     => 'wp_page_menu',
+                'theme_location'  => 'top'
+            ]);
+        ?>
+    </div>
+    <div class="swipe__bottom">
+        <div class="swipe__in">
+            <a href="#" class="">Войти</a>
+        </div>
+    </div>
+</div>

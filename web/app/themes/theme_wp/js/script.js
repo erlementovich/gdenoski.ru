@@ -42,3 +42,19 @@ jQuery(document).ready(function ($) {
     });
 });
 
+/**
+ * Hamburger JS
+ */
+jQuery(document).ready(function ($) {
+    var $hamburger = $('.hamburger'),
+        $bg = $('.bgshadow'),
+        $body = $('body');
+
+    $hamburger.on('click', function () {
+        $body.toggleClass('menuShowed');
+    });
+
+    $bg.on('click', function () {
+        $body.removeClass('menuShowed');
+    });
+});
