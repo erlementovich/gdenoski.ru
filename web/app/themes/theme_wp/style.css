@@ -14,6 +14,8 @@
     --second-color: rgba(255,255,255,1);
     --default-bg: rgba(0,0,0,.07);
     --black: #222;
+    --swipe-color: #222;
+    --swipe-bg: #fff;
 }
 /* End variables */
 
@@ -391,19 +393,12 @@ header.header {
     -o-object-fit: cover;
     border-radius: 20px;
 }
-.swiper-slide.swiper-slide-next .bill__inner {
-    /*background-color: hsla(0,0%,100%,.24);*/
-    /*transition: background-color .15s;*/
-}
 .swiper-slide.swiper-slide-next .bill__bg:before {
     background-color: hsla(0,0%,100%,.24);
     transition: background-color .15s;
 }
 .swiper-slide.swiper-slide-next .bill__bg:hover:before {
     background-color: rgba(255,255,255,.4);
-}
-.swiper-slide.swiper-slide-next .bill__inner:hover {
-    /*background-color: rgba(255,255,255,.4);*/
 }
 .bill__inner {
     width: 100%;
@@ -1556,8 +1551,116 @@ footer {
 /* End footer */
 
 
+body.socialShowed .header__mobile {
+    z-index: 4;
+}
+/* Mobile AppleMenu */
+body.socialShowed .mswipe {
+    bottom: 0;
+}
+jdiv {
+    transition: all .3s ease!important;
+}
+body.socialShowed jdiv {
+    right: -100px;
+}
+.mswipe__trigger {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 65px;
+    height: 65px;
+    border-radius: 50px;
+    background-image: url(/app/themes/theme_wp/icons/gdenoski_pozvonit.svg);
+    background-size: cover;
+    font-size: 11px;
+    color: #fff;
+    line-height: 65px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 19px 38px 0 rgba(34,36,43,.3);
+}
+.mswipe {
+    position: fixed;
+    right: 0;
+    height: 526px;
+    bottom: -556px;
+    left: 0;
+    z-index: 999;
+    background-color: #f5f5f5;
+    transition: all .3s ease;
+    padding-top: 15px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow-y: scroll;
+}
+.mswipe__inner {
+    overflow-x: scroll;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.mswipe__social {
+    display: flex;
+    flex-flow: wrap;
+    width: max-content;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.mswipe__item {
+    text-align: center;
+    width: 90px;
+}
+.mswipe__item-ok {
+    padding-right: 35px;
+}
+.mswipe__item img {
+    width: 55px;
+}
+.mswipe__item span {
+    padding-top: 20px;
+}
+.mswipe__point {
+    line-height: 50px;
+    height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.mswipe__points,
+.mswipe__point-single {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    background-color: var(--swipe-bg);
+    color: var(--swipe-color);
+    border-radius: 8px;
+}
+.mswipe__points .mswipe__point {
+    border-bottom: 1px solid #f5f5f5;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .mswipe {
+        max-width: 440px;
+        left: 25px;
+        border-radius: 12px;
+    }
+    body.socialShowed .mswipe {
+        bottom: 20px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .mswipe,
+    .mswipe__trigger {
+        display: none;
+    }
+}
+/* End mobile AppleMenu */
+
+
 /* Header mobile */
-body.menuShowed {
+body.menuShowed,
+body.socialShowed {
     overflow: hidden;
 }
 
@@ -1620,7 +1723,11 @@ body.menuShowed .bgshadow {
     z-index: 98;
     visibility: visible;
 }
-
+body.socialShowed .bgshadow {
+    z-index: 99;
+    background-color: rgba(0,0,0,.3);
+    visibility: visible;
+}
 
 .header__mobile {
     padding: 15px;
@@ -1895,7 +2002,7 @@ body.menuShowed .header__swipe {
             flex-basis: 49%;
         }
         .socks__thumb {
-            height: 356px;
+            height: 276px;
         }
 
         /* Socks single */
@@ -2075,6 +2182,11 @@ body.menuShowed .header__swipe {
             opacity: 1;
         }
 
+        /* Watched section */
+        .socks__watched {
+            margin-top: 0;
+        }
+
         /* Blog page */
         .blog__archive {
             padding-left: 15px;
@@ -2139,8 +2251,12 @@ body.menuShowed .header__swipe {
         .blog__wrap-inner>.blog__item:not(:nth-child(4n+4)),
         .socks__wrap-mobileinner>.socks__item:not(:nth-child(4n+4)) {
             margin-right: 15px;
+            margin-bottom: 0;
         }
         /* Blog section */
+        .section__blog {
+            margin-top: 0;
+        }
         .blog__wrap {
             overflow-x: hidden;
         }

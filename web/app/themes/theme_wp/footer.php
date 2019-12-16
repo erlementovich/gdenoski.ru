@@ -127,5 +127,132 @@
         });
     </script>
 <?php endif; ?>
+<script src="//code.jivosite.com/widget.js" data-jv-id="5ZChj3Sw8p" async></script>
+
+<div class="mswipe__trigger"></div>
+<div class="mswipe">
+    <div class="mswipe__inner">
+        <div class="mswipe__social">
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_pozvonit.svg" alt="Позвонить gdenoski.ru">
+                <span>Телефон</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_whatsapp.svg" alt="Ватсапп gdenoski.ru">
+                <span>Whatsapp</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_telegram.svg" alt="Телеграм gdenoski.ru">
+                <span>Телеграм</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_email.svg" alt="Электронная почта gdenoski.ru">
+                <span>Email</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_viber.svg" alt="Вайбер gdenoski.ru">
+                <span>Viber</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_skype.svg" alt="Скайп gdenoski.ru">
+                <span>Skype</span>
+            </a>
+        </div>
+    </div>
+    <div class="mswipe__inner">
+        <div class="mswipe__social">
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_instagram.svg" alt="Инстаграм gdenoski.ru">
+                <span>Instagram</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_facebook.svg" alt="Фейсбук gdenoski.ru">
+                <span>Facebook</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_vkontakte.svg" alt="Вконтакте gdenoski.ru">
+                <span>Вконтакте</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_twitter.svg" alt="Твиттер gdenoski.ru">
+                <span>Twitter</span>
+            </a>
+            <a href="#" class="mswipe__item">
+                <img src="/app/themes/theme_wp/icons/gdenoski_youtube.svg" alt="Ютуб gdenoski.ru">
+                <span>YouTube</span>
+            </a>
+            <a href="#" class="mswipe__item mswipe__item-ok">
+                <img src="/app/themes/theme_wp/icons/gdenoski_odnoklassniki.svg" alt="Одноклассники gdenoski.ru">
+                <span>Одноклассники</span>
+            </a>
+        </div>
+    </div>
+<!--    <div class="mswipe__point mswipe__point-single">-->
+<!--        <div class="mswipe__point-inner">-->
+<!--            <div class="mswipe__intext">Скопировать ссылку</div>-->
+<!--            <div class="mswipe__inicon"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="mswipe__points">
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Скопировать ссылку</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Напечатать</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mswipe__points">
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Дублировать</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Скрыть</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Слайд-шоу</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mswipe__points">
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Создать циферблат</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Сохранить в файлы</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Присвоить контакту</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+        <div class="mswipe__point">
+            <div class="mswipe__point-inner">
+                <div class="mswipe__intext">Поделиться</div>
+                <div class="mswipe__inicon"></div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

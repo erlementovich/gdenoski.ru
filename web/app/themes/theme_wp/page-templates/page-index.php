@@ -274,7 +274,7 @@
             
             <!--  Watched section  -->
             <?php if (isset($_COOKIE['viewedProd'])) : ?>
-            <section class="socks__wrap">
+            <section class="socks__wrap socks__watched">
                 <div class="section__title title-button">
                     <h2>Вы смотрели</h2>
                     <a href="/magazin" class="button button-black">Все носки</a>

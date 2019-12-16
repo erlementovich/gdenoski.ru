@@ -48,13 +48,21 @@ jQuery(document).ready(function ($) {
 jQuery(document).ready(function ($) {
     var $hamburger = $('.hamburger'),
         $bg = $('.bgshadow'),
-        $body = $('body');
+        $body = $('body'),
+        $mtrig = $('.mswipe__trigger');
 
     $hamburger.on('click', function () {
         $body.toggleClass('menuShowed');
     });
 
     $bg.on('click', function () {
-        $body.removeClass('menuShowed');
+        $body.removeClass('menuShowed')
+             .removeClass('socialShowed');
     });
+
+    $mtrig.on('click', function () {
+        $body.toggleClass('socialShowed');
+    });
+
 });
+
